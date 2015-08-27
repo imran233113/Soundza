@@ -26,6 +26,7 @@
 		18994FB51B8F94BC00AEA795 /* SDSoundCloudAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FB41B8F94BC00AEA795 /* SDSoundCloudAPI.m */; };
 		18994FBE1B8F993F00AEA795 /* SDSearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FBD1B8F993F00AEA795 /* SDSearchResultsTableViewController.m */; };
 		18994FC11B8F99EA00AEA795 /* SDSearchResultsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FC01B8F99EA00AEA795 /* SDSearchResultsTableViewCell.m */; };
+		18994FC41B8FA53900AEA795 /* SDTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FC31B8FA53900AEA795 /* SDTrack.m */; };
 		B95885B332F1329B4E5B6868 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04449D7A4393601368ECD5E6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,8 @@
 		18994FBD1B8F993F00AEA795 /* SDSearchResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSearchResultsTableViewController.m; sourceTree = "<group>"; };
 		18994FBF1B8F99EA00AEA795 /* SDSearchResultsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDSearchResultsTableViewCell.h; sourceTree = "<group>"; };
 		18994FC01B8F99EA00AEA795 /* SDSearchResultsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSearchResultsTableViewCell.m; sourceTree = "<group>"; };
+		18994FC21B8FA53900AEA795 /* SDTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTrack.h; sourceTree = "<group>"; };
+		18994FC31B8FA53900AEA795 /* SDTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTrack.m; sourceTree = "<group>"; };
 		1AD9D907A69FB546F7B1BAD4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		1F6FDF458636676E0A805C00 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +125,7 @@
 				18994FA01B8F8DBB00AEA795 /* Playlist Controllers */,
 				18994F991B8F8D4700AEA795 /* Search Controllers */,
 				18994F931B8F8CB200AEA795 /* Tab Controllers */,
+				18994FC51B8FA54100AEA795 /* Models */,
 				18994F8F1B8F8BE400AEA795 /* Utilities */,
 				18994F761B8F8A4400AEA795 /* Images.xcassets */,
 				18994F781B8F8A4400AEA795 /* LaunchScreen.xib */,
@@ -212,6 +216,15 @@
 				18994FAE1B8F8FDB00AEA795 /* SDPlayerViewController.m */,
 			);
 			name = "Player Controllers";
+			sourceTree = "<group>";
+		};
+		18994FC51B8FA54100AEA795 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				18994FC21B8FA53900AEA795 /* SDTrack.h */,
+				18994FC31B8FA53900AEA795 /* SDTrack.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		5ACBFF33AA453EAC325A276E /* Frameworks */ = {
@@ -376,6 +389,7 @@
 				18994FB51B8F94BC00AEA795 /* SDSoundCloudAPI.m in Sources */,
 				18994F6F1B8F8A4400AEA795 /* AppDelegate.m in Sources */,
 				18994F6C1B8F8A4400AEA795 /* main.m in Sources */,
+				18994FC41B8FA53900AEA795 /* SDTrack.m in Sources */,
 				18994FA61B8F8E1800AEA795 /* SDSearchTableViewController.m in Sources */,
 				18994FC11B8F99EA00AEA795 /* SDSearchResultsTableViewCell.m in Sources */,
 				18994FAF1B8F8FDB00AEA795 /* SDPlayerViewController.m in Sources */,

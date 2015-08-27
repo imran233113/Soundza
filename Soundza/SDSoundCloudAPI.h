@@ -17,4 +17,7 @@
 
 -(void)getTracksForGenre:(NSString *)genre withCompletion:(void(^)(NSArray *tracks, BOOL error))completion;
 +(NSArray *)listOfGenres;
+
+
+-(void)parseTracks:(NSArray *)tracks withCompletion:(void(^)(NSArray *parsedTracks))compltion;
 @end

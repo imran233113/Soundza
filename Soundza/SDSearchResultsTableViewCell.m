@@ -14,10 +14,25 @@
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+-(void)setDisplayForTrack:(SDTrack *)track
+{
+    self.titleLabel.text = track.titleString;
+    self.usernameLabel.text = track.usernameString;
+    
+    
+    NSURL *albumArtURLString = [NSURL URLWithString:track.artworkURLString];
+    __weak SDSearchResultsTableViewCell *weakSelf = self;
+    
+    [self.albumArtImageView sd_setImageWithURL:albumArtURLString completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        
+        if (cacheType == SDImageCacheTypeNone) {
+            weakSelf.albumArtImageView.alpha = 0;
+            [UIView animateWithDuration:0.3 animations:^{
+                weakSelf.albumArtImageView.alpha = 1;
+            }];
+        } else {
+            weakSelf.albumArtImageView.alpha = 1;
+        }
+    }];
 }
-
 @end

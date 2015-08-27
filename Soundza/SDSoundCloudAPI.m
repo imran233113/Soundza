@@ -8,6 +8,7 @@
 
 #import "SDSoundCloudAPI.h"
 #import <SCAPI.h>
+#import "SDTrack.h"
 
 NSString *const ClientID = @"40da707152150e8696da429111e3af39";
 
@@ -57,6 +58,19 @@ NSString *const ClientID = @"40da707152150e8696da429111e3af39";
             completion((NSArray *) nil, (BOOL) YES);
         }
     }];
+}
+
+-(void)parseTracks:(NSArray *)tracks withCompletion:(void(^)(NSArray *parsedTracks))compltion;
+{
+    NSMutableArray *result = [[NSMutableArray alloc]init];
+    for (NSDictionary *trk in tracks) {
+        SDTrack *track = [[SDTrack alloc]initWithTrack:trk];
+        [result addObject:track];
+    }
+    
+    if (compltion) {
+        compltion(result);
+    }
 }
 
 +(NSArray *)listOfGenres
