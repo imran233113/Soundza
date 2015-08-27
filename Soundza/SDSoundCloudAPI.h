@@ -16,6 +16,7 @@
 +(SDSoundCloudAPI *)sharedManager;
 
 -(void)getTracksForGenre:(NSString *)genre withCompletion:(void(^)(NSArray *tracks, BOOL error))completion;
++ (void)getTracksWithSearch:(NSString *)search withCompletion:(void(^)(NSMutableArray *tracks, BOOL error))completion;
 +(NSArray *)listOfGenres;
 
 

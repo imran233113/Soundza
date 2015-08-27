@@ -25,12 +25,39 @@ NSString *const ClientID = @"40da707152150e8696da429111e3af39";
     return sharedManager;
 }
 
++ (void)getTracksWithSearch:(NSString *)search withCompletion:(void(^)(NSMutableArray *tracks, BOOL error))completion;
+{
+    NSString *appendedInput = [search stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    search = [NSString stringWithFormat:@"https://api.soundcloud.com/tracks?client_id=%@&q=%@&limit=35&format=json",ClientID, appendedInput];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:search parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSMutableArray *responseArray = [responseObject mutableCopy];
+        NSMutableIndexSet *indexesToDelete = [NSMutableIndexSet indexSet];
+        NSUInteger currentIndex = 0;
+        for (NSDictionary *track in responseArray) {
+            if ([track objectForKey:@"streamable"] == [NSNumber numberWithBool:false]) {
+                [indexesToDelete addIndex:currentIndex];
+            }
+            currentIndex++;
+        }
+        [responseArray removeObjectsAtIndexes:indexesToDelete];
+        completion((NSMutableArray *) responseArray, (BOOL) NO);
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+  
+}
+
 -(void)getTracksForGenre:(NSString *)genre withCompletion:(void(^)(NSArray *tracks, BOOL error))completion;
 {
     
     NSString *appendedInput = [genre stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSString *appendInput2 = [appendedInput stringByReplacingOccurrencesOfString:@"&" withString:@"%26"];
-    NSString *path = [NSString stringWithFormat:@"https://api.soundcloud.com/tracks?genres=%@&limit=35&client_id=%@",appendInput2, ClientID];
+    NSString *path = [NSString stringWithFormat:@"https://api.soundcloud.com/tracks?genres=%@&limit=50&client_id=%@",appendInput2, ClientID];
     
     //Used the shared operation manager to prevent crashing. This allows the operation to be canceled at any time. Prevents crashes from popping/dismissing view controllers during an async request. It may be best to use the shared operation manager for all of my operations, but for now it is only needed for getting tracks for genre.
     self.operationManager = [AFHTTPRequestOperationManager manager];
@@ -54,8 +81,6 @@ NSString *const ClientID = @"40da707152150e8696da429111e3af39";
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
         if (completion) {
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"networkError" object:nil];
-            completion((NSArray *) nil, (BOOL) YES);
         }
     }];
 }

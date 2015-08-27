@@ -42,6 +42,7 @@
     item3.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
     playlistVC.tabBarItem = item3;
 
+    //Set the tint color to the SoundCloud orange
     [self.tabBar setTintColor:[UIColor colorWithRed:0.981 green:0.347 blue:0 alpha:1]];
 
     

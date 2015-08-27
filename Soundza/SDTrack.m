@@ -13,7 +13,6 @@ static NSString *const KTrackUserString = @"user";
 static NSString *const KUserUsernameString = @"username";
 static NSString *const KTrackArtworkURLString = @"artwork_url";
 
-
 @implementation SDTrack
 
 -(id)initWithTrack:(NSDictionary *)track;

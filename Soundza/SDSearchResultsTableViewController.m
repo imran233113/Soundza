@@ -15,6 +15,7 @@ static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
 
 @interface SDSearchResultsTableViewController ()
 @property (strong, nonatomic) NSArray *searchResults;
+@property (strong, nonatomic) UIRefreshControl *refreshController;
 @end
 
 @implementation SDSearchResultsTableViewController
@@ -24,25 +25,16 @@ static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
     
     self.searchResults = [[NSArray alloc]init];
     
-    UIRefreshControl *refreshController = [[UIRefreshControl alloc]init];
-    [self setRefreshControl:refreshController];
-    [refreshController addTarget:self action:@selector(refreshControlActivated:) forControlEvents:UIControlEventValueChanged];
+    self.refreshController = [[UIRefreshControl alloc]init];
+    [self setRefreshControl:self.refreshController];
+    [self.refreshController addTarget:self action:@selector(refreshControlActivated:) forControlEvents:UIControlEventValueChanged];
     
-    [refreshController beginRefreshing];
-    [[SDSoundCloudAPI sharedManager]getTracksForGenre:self.genreString withCompletion:^(NSArray *tracks, BOOL error) {
-        if (!error) {
-            [[SDSoundCloudAPI sharedManager]parseTracks:tracks withCompletion:^(NSArray *parsedTracks) {
-                self.searchResults = parsedTracks;
-                [refreshController endRefreshing];
-                [self.tableView reloadData];
-            }];
-        }
-    }];
+    [self populateDataSource];
 }
 
 -(void)refreshControlActivated:(UIRefreshControl *)refreshControl
 {
-    
+    [self populateDataSource];
 }
 
 #pragma mark - Table view data source
@@ -62,6 +54,28 @@ static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
     SDTrack *track = self.searchResults[indexPath.row];
     [cell setDisplayForTrack:track];
     return cell;
+}
+
+-(void)populateDataSource
+{
+    
+    //if the user is searching by genre, else, search by search text field
+    if (self.genreString) {
+        [self.refreshController beginRefreshing];
+        [[SDSoundCloudAPI sharedManager]getTracksForGenre:self.genreString withCompletion:^(NSArray *tracks, BOOL error) {
+            if (!error) {
+                [[SDSoundCloudAPI sharedManager]parseTracks:tracks withCompletion:^(NSArray *parsedTracks) {
+                    self.searchResults = parsedTracks;
+                    [self.refreshController endRefreshing];
+                    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+                }];
+            }
+        }];
+    }
+    else{
+        
+    }
+    
 }
 
 @end

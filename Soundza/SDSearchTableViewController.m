@@ -13,6 +13,7 @@
 static NSString *const KTableViewReuseIdentitifer = @"Cell";
 
 @interface SDSearchTableViewController ()
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) NSArray *generes;
 @end
 

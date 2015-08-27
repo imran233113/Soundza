@@ -23,16 +23,18 @@
     NSURL *albumArtURLString = [NSURL URLWithString:track.artworkURLString];
     __weak SDSearchResultsTableViewCell *weakSelf = self;
     
-    [self.albumArtImageView sd_setImageWithURL:albumArtURLString completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    
+    [self.albumArtImageView sd_setImageWithURL:albumArtURLString placeholderImage:nil options:SDWebImageCacheMemoryOnly completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
         if (cacheType == SDImageCacheTypeNone) {
             weakSelf.albumArtImageView.alpha = 0;
-            [UIView animateWithDuration:0.3 animations:^{
+            [UIView animateWithDuration:0.4 animations:^{
                 weakSelf.albumArtImageView.alpha = 1;
             }];
         } else {
             weakSelf.albumArtImageView.alpha = 1;
         }
+
     }];
 }
 @end
