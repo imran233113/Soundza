@@ -188,13 +188,7 @@
 				18994FB31B8F94BC00AEA795 /* SDSoundCloudAPI.h */,
 				18994FB41B8F94BC00AEA795 /* SDSoundCloudAPI.m */,
 				18994FCE1B90CEBE00AEA795 /* SliderHandle@2x.png */,
-				18994FCC1B90C6F500AEA795 /* Skip@2x.png */,
-				18994FC61B90C6EC00AEA795 /* Pause@2x.png */,
-				18994FC71B90C6EC00AEA795 /* Play@2x.png */,
-				18994FC81B90C6EC00AEA795 /* PlayLast@2x.png */,
-				18994FA71B8F8F5D00AEA795 /* Playlists@2x.png */,
-				18994FA81B8F8F5D00AEA795 /* Search@2x.png */,
-				18994FB11B8F90E600AEA795 /* StreamBlack@2x.png */,
+				18994FE01B90F93300AEA795 /* Assets */,
 				18994F6D1B8F8A4400AEA795 /* AppDelegate.h */,
 				18994F6E1B8F8A4400AEA795 /* AppDelegate.m */,
 			);
@@ -270,6 +264,20 @@
 			name = "Page Controllers";
 			sourceTree = "<group>";
 		};
+		18994FE01B90F93300AEA795 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				18994FCC1B90C6F500AEA795 /* Skip@2x.png */,
+				18994FC61B90C6EC00AEA795 /* Pause@2x.png */,
+				18994FC71B90C6EC00AEA795 /* Play@2x.png */,
+				18994FC81B90C6EC00AEA795 /* PlayLast@2x.png */,
+				18994FA71B8F8F5D00AEA795 /* Playlists@2x.png */,
+				18994FA81B8F8F5D00AEA795 /* Search@2x.png */,
+				18994FB11B8F90E600AEA795 /* StreamBlack@2x.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		5ACBFF33AA453EAC325A276E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +346,11 @@
 				TargetAttributes = {
 					18994F651B8F8A4400AEA795 = {
 						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					18994F7E1B8F8A4400AEA795 = {
 						CreatedOnToolsVersion = 6.4;

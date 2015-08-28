@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface AppDelegate ()
 
@@ -19,6 +20,15 @@
    
     //Change nav bar tint to orange
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.981 green:0.347 blue:0 alpha:1]];
+    
+    //Allow the application to receive remote events for audio playback
+    NSError *sessionError = nil;
+    NSError *activationError = nil;
+    [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&sessionError];
+    [[AVAudioSession sharedInstance] setActive: YES error: &activationError];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [self becomeFirstResponder];
+
     
     return YES;
 }
