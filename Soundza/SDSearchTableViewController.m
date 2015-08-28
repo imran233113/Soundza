@@ -15,6 +15,7 @@ static NSString *const KTableViewReuseIdentitifer = @"Cell";
 @interface SDSearchTableViewController ()
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) NSArray *generes;
+@property (assign ,nonatomic) BOOL fromSearch;
 @end
 
 @implementation SDSearchTableViewController
@@ -24,6 +25,7 @@ static NSString *const KTableViewReuseIdentitifer = @"Cell";
     
     self.generes = [SDSoundCloudAPI listOfGenres];
     
+    self.searchBar.delegate = self;
     
   }
 
@@ -51,8 +53,34 @@ static NSString *const KTableViewReuseIdentitifer = @"Cell";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *genreSelected = self.generes[indexPath.row];
+    self.fromSearch = NO;
     [self performSegueWithIdentifier:@"toResultsVC" sender:genreSelected];
 }
+
+#pragma mark - Search Bar Delegate / Data Source
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    searchBar.showsCancelButton = YES;
+}
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    searchBar.showsCancelButton = NO;
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    self.fromSearch = YES;
+    [searchBar resignFirstResponder];
+    [self performSegueWithIdentifier:@"toResultsVC" sender:searchBar.text];
+}
+
 
 #pragma mark - Navigation
 
@@ -60,7 +88,14 @@ static NSString *const KTableViewReuseIdentitifer = @"Cell";
 {
     if ([segue.identifier isEqualToString:@"toResultsVC"]) {
         SDSearchResultsTableViewController *resultsVC = segue.destinationViewController;
-        resultsVC.genreString = sender;
+        if (self.fromSearch) {
+            resultsVC.searchString = sender;
+            resultsVC.genreString = nil;
+        }
+        else{
+            resultsVC.genreString = sender;
+            resultsVC.searchString = nil;
+        }
     }
 }
 

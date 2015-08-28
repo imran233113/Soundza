@@ -28,7 +28,7 @@ NSString *const ClientID = @"40da707152150e8696da429111e3af39";
 + (void)getTracksWithSearch:(NSString *)search withCompletion:(void(^)(NSMutableArray *tracks, BOOL error))completion;
 {
     NSString *appendedInput = [search stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-    search = [NSString stringWithFormat:@"https://api.soundcloud.com/tracks?client_id=%@&q=%@&limit=35&format=json",ClientID, appendedInput];
+    search = [NSString stringWithFormat:@"https://api.soundcloud.com/tracks?client_id=%@&q=%@&limit=50&format=json",ClientID, appendedInput];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:search parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {

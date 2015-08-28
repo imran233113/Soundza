@@ -10,4 +10,5 @@
 
 @interface SDSearchResultsTableViewController : UITableViewController
 @property (strong, nonatomic) NSString *genreString;
+@property (strong, nonatomic) NSString *searchString;
 @end

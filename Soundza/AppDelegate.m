@@ -17,7 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    
-    [[UINavigationBar appearance] setTintColor:[UIColor darkGrayColor]];
+    //Change nav bar tint to orange
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.981 green:0.347 blue:0 alpha:1]];
     
     return YES;
 }

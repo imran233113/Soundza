@@ -25,10 +25,13 @@ static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
     
     self.searchResults = [[NSArray alloc]init];
     
+    self.navigationItem.title = self.genreString ? self.genreString : self.searchString;
+    
     self.refreshController = [[UIRefreshControl alloc]init];
     [self setRefreshControl:self.refreshController];
     [self.refreshController addTarget:self action:@selector(refreshControlActivated:) forControlEvents:UIControlEventValueChanged];
     
+     [self.tableView setContentOffset:CGPointMake(0, self.tableView.contentOffset.y-self.refreshControl.frame.size.height) animated:YES];
     [self populateDataSource];
 }
 
@@ -38,6 +41,11 @@ static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
 }
 
 #pragma mark - Table view data source
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @" ";
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -59,9 +67,10 @@ static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
 -(void)populateDataSource
 {
     
+    [self.refreshController beginRefreshing];
+    
     //if the user is searching by genre, else, search by search text field
     if (self.genreString) {
-        [self.refreshController beginRefreshing];
         [[SDSoundCloudAPI sharedManager]getTracksForGenre:self.genreString withCompletion:^(NSArray *tracks, BOOL error) {
             if (!error) {
                 [[SDSoundCloudAPI sharedManager]parseTracks:tracks withCompletion:^(NSArray *parsedTracks) {
@@ -73,7 +82,15 @@ static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
         }];
     }
     else{
-        
+        [SDSoundCloudAPI getTracksWithSearch:self.searchString withCompletion:^(NSMutableArray *tracks, BOOL error) {
+            if (!error) {
+                [[SDSoundCloudAPI sharedManager]parseTracks:tracks withCompletion:^(NSArray *parsedTracks) {
+                    self.searchResults = parsedTracks;
+                    [self.refreshController endRefreshing];
+                    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+                }];
+            }
+        }];
     }
     
 }
