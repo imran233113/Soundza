@@ -10,6 +10,7 @@
 #import "SDSearchResultsTableViewCell.h"
 #import "SDSoundCloudAPI.h"
 #import "SDTrack.h"
+#import "PlayerManager.h"
 
 static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
 
@@ -63,6 +64,14 @@ static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
     [cell setDisplayForTrack:track];
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SDTrack *track = self.searchResults[indexPath.row];
+    [[PlayerManager sharedManager]playTrackOnce:track trackIndex:indexPath.row];
+}
+
+#pragma mark - Private Methods
 
 -(void)populateDataSource
 {

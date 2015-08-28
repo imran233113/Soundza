@@ -7,17 +7,191 @@
 //
 
 #import "SDPlayerViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "SDTrack.h"
+
 
 @interface SDPlayerViewController ()
+@property (strong, nonatomic) IBOutlet UISlider *slider;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *albumArtImageView;
+@property (strong, nonatomic) IBOutlet UIButton *playPauseButton;
+@property (strong, nonatomic) IBOutlet UIButton *skipButton;
+@property (strong, nonatomic) IBOutlet UIButton *playLastButton;
+@property (strong, nonatomic) IBOutlet UILabel *durationLabel;
 
+- (IBAction)playPauseButtonPressed:(id)sender;
+- (IBAction)skipButtonPressed:(id)sender;
+- (IBAction)playLastButtonPressed:(id)sender;
+- (IBAction)sliding:(id)sender;
 @end
 
 @implementation SDPlayerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [PlayerManager sharedManager].delegate = self;
+    
+    [self.slider setThumbImage:[UIImage imageNamed:@"SliderHandle"] forState:UIControlStateNormal];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updatedQueueNotification:) name:@"updatedPlayer" object:nil];
+    
+    [self setDisplayForCurrentTrack];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.playPauseButton.selected = [PlayerManager sharedManager].playerIsPlaying;
+    [self setDisplayForCurrentTrack];
+
+}
+
+-(void)updatedQueueNotification:(NSNotification *)notification
+{
+    [self setDisplayForCurrentTrack];
+}
+
+
+#pragma mark - Player Manager Delegate
+
+-(void)updateProgressViewWithProgress:(CGFloat)progress timeLeft:(NSString *)time
+{
+    self.durationLabel.text = [NSString stringWithFormat:@"-%@", time];
+    self.slider.value = progress;
+    if (self.slider.value == 1) {
+        [self.slider setValue:0.0 animated:YES];
+    }
+}
+
+- (IBAction)playPauseButtonPressed:(id)sender
+{
+    [[PlayerManager sharedManager]togglePlayPause:sender];
+}
+
+- (IBAction)skipButtonPressed:(id)sender
+{
+    [[PlayerManager sharedManager]playNext];
+}
+
+- (IBAction)playLastButtonPressed:(id)sender
+{
+    
+}
+
+- (IBAction)sliding:(id)sender
+{
+    AVPlayer *player = [PlayerManager sharedManager].player;
+    if ([sender isKindOfClass:[UISlider class]])
+    {
+        UISlider* slider = sender;
+        
+        CMTime playerDuration = player.currentItem.duration;
+        if (CMTIME_IS_INVALID(playerDuration)) {
+            return;
+        }
+        
+        double duration = CMTimeGetSeconds(playerDuration);
+        if (isfinite(duration))
+        {
+            float minValue = [slider minimumValue];
+            float maxValue = [slider maximumValue];
+            float value = [slider value];
+            
+            double time = duration * (value - minValue) / (maxValue - minValue);
+            
+            [player seekToTime:CMTimeMakeWithSeconds(time, NSEC_PER_SEC)];
+        }
+    }
+}
+
+#pragma mark - Priviate Methods
+
+-(void)setDisplayForCurrentTrack
+{
+    
+    SDTrack *track = [PlayerManager sharedManager].currentTrack;
+
+    
+    if (!track) {
+        
+        [self setDisplayForNoCurrentTrack];
+        
+    }
+    else{
+        self.durationLabel.alpha = .9;
+        self.skipButton.alpha = .85;
+        self.skipButton.enabled = YES;
+        self.playPauseButton.alpha = .85;
+        self.playPauseButton.enabled = YES;
+        
+        BOOL playingFromSearch = [PlayerManager sharedManager].playingFromSearch;
+        int currentPlaylistIndex = [PlayerManager sharedManager].currentPlaylistIndex;
+        double queueCount = [PlayerManager sharedManager].queue.count;
+        if (playingFromSearch || currentPlaylistIndex == 0 || queueCount){
+            self.playLastButton.alpha = .55;
+            self.playLastButton.enabled = NO;
+        }
+        else{
+            self.playLastButton.alpha = .85;
+            self.playLastButton.enabled = YES;
+        }
+        
+        //Populate the cell with the data recieved from the search.
+        self.titleLabel.text = track.titleString;
+        self.usernameLabel.text = track.usernameString;
+        //Format the tracks duration into a string and set the label.
+        int duration = [track.duration intValue];
+        NSString *durationString = [self timeFormatted:duration];
+        self.durationLabel.text = durationString;
+        
+        NSString *urlString = track.artworkURLString;
+        if (![urlString isEqual:[NSNull null]]) {
+            NSString *highRes = [urlString stringByReplacingOccurrencesOfString:@"large" withString:@"crop"];
+            NSURL *artURL = [NSURL URLWithString:highRes];
+            [self.albumArtImageView sd_setImageWithURL:artURL completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                if (image == nil) {
+                    [self.albumArtImageView setImage:[UIImage imageNamed:@"no-album-art.png"]];
+                }
+            }];
+            
+        }
+        else
+        {
+            [self.albumArtImageView setImage:[UIImage imageNamed:@"no-album-art.png"]];
+        }
+    }
+}
+
+-(void)setDisplayForNoCurrentTrack
+{
+    self.titleLabel.text = @"";
+    self.usernameLabel.text = @"No current song";
+    self.durationLabel.text = @"0:00";
+    self.albumArtImageView.image = nil;
+    
+    self.durationLabel.alpha = .55;
+    self.skipButton.alpha = .55;
+    self.skipButton.enabled = NO;
+    self.playPauseButton.alpha = .55;
+    self.playPauseButton.enabled = NO;
+    self.playLastButton.alpha = .55;
+    self.playLastButton.enabled = NO;
+}
+
+
+- (NSString *)timeFormatted:(int)totalSeconds
+{
+    int temp = (int)totalSeconds / 1000;
+    int minutes = (temp / 60);
+    int seconds = temp % 60;
+    
+    if (seconds < 10)
+        return [NSString stringWithFormat:@"%i:0%i", minutes, seconds];
+    else
+        return [NSString stringWithFormat:@"%i:%i", minutes, seconds];
+}
 
 @end

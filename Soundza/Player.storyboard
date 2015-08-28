@@ -1,13 +1,87 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="03q-vB-bay">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SPm-co-tzc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="dXb-vv-kBe">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QM8-Ug-1Tk" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6N6-Pl-Rf6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="-288"/>
+        </scene>
+        <!--Page Root View Controller-->
+        <scene sceneID="E2b-mt-0LI">
+            <objects>
+                <viewController id="SPm-co-tzc" customClass="SAPageRootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sXe-Ft-YNL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Br0-9k-BcX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jmz-Eh-pPT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E8w-qK-RG1">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem id="wCF-ef-MVL">
+                                        <nil key="title"/>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="W86-y3-az0">
+                                            <rect key="frame" x="96" y="7" width="128" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Current"/>
+                                                <segment title="Queue"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="segmentSwitch:" destination="SPm-co-tzc" eventType="valueChanged" id="f7c-i3-up6"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="navigationBar" destination="E8w-qK-RG1" id="QVw-11-Z7T"/>
+                        <outlet property="segmentedControl" destination="W86-y3-az0" id="wo8-67-dGd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ezP-Hw-5zG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="388"/>
+        </scene>
+        <!--Queue View Controller-->
+        <scene sceneID="KPq-Qo-VSz">
+            <objects>
+                <viewController storyboardIdentifier="Queue" useStoryboardIdentifierAsRestorationIdentifier="YES" id="izL-hL-Vww" customClass="SDQueueViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Qb-ru-HmY"/>
+                        <viewControllerLayoutGuide type="bottom" id="xDT-8c-gBf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lLu-oX-M39">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2rG-xX-sXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="388"/>
+        </scene>
         <!--Player View Controller-->
         <scene sceneID="VH0-f2-uCG">
             <objects>
-                <viewController id="03q-vB-bay" customClass="SDPlayerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Player" useStoryboardIdentifierAsRestorationIdentifier="YES" id="03q-vB-bay" customClass="SDPlayerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s5J-B8-rwC"/>
                         <viewControllerLayoutGuide type="bottom" id="eTu-y5-79r"/>
@@ -15,13 +89,87 @@
                     <view key="view" contentMode="scaleToFill" id="WJv-Av-M3H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdk-ix-97H">
+                                <rect key="frame" x="143" y="442" width="35" height="35"/>
+                                <state key="normal" image="Play.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="Pause.png"/>
+                                <connections>
+                                    <action selector="playPauseButtonPressed:" destination="03q-vB-bay" eventType="touchUpInside" id="vf9-xD-uYt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLI-RR-aAd">
+                                <rect key="frame" x="218" y="447" width="28" height="28"/>
+                                <state key="normal" image="Skip.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipButtonPressed:" destination="03q-vB-bay" eventType="touchUpInside" id="AOT-y6-ed4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfC-qK-E8Q">
+                                <rect key="frame" x="75" y="447" width="28" height="28"/>
+                                <state key="normal" image="PlayLast.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playLastButtonPressed:" destination="03q-vB-bay" eventType="touchUpInside" id="wLP-50-fLo"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DH6-Pe-bbt">
+                                <rect key="frame" x="0.0" y="64" width="320" height="257"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bob Dylan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LtK-fU-GmS">
+                                <rect key="frame" x="28" y="360" width="264" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fPy-cI-lL7">
+                                <rect key="frame" x="42" y="398" width="236" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.45396298170089722" green="0.44113677740097046" blue="0.43172526359558105" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="sliding:" destination="03q-vB-bay" eventType="valueChanged" id="EMg-hC-wBc"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0X-3v-APU">
+                                <rect key="frame" x="279" y="395" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blowin' In The Wind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHF-pf-fcM">
+                                <rect key="frame" x="28" y="337" width="264" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="albumArtImageView" destination="DH6-Pe-bbt" id="ujL-Xp-mQr"/>
+                        <outlet property="durationLabel" destination="O0X-3v-APU" id="02F-eN-Ti3"/>
+                        <outlet property="playLastButton" destination="yfC-qK-E8Q" id="uX2-mZ-9bP"/>
+                        <outlet property="playPauseButton" destination="vdk-ix-97H" id="vHO-4f-PEg"/>
+                        <outlet property="skipButton" destination="eLI-RR-aAd" id="lCd-rY-Ekr"/>
+                        <outlet property="slider" destination="fPy-cI-lL7" id="EHO-Sb-QT9"/>
+                        <outlet property="titleLabel" destination="wHF-pf-fcM" id="w0Z-eP-ehi"/>
+                        <outlet property="usernameLabel" destination="LtK-fU-GmS" id="4rR-JG-une"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cif-e7-XKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="349"/>
+            <point key="canvasLocation" x="565" y="-288"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Pause.png" width="86" height="120"/>
+        <image name="Play.png" width="113" height="110"/>
+        <image name="PlayLast.png" width="76" height="68"/>
+        <image name="Skip.png" width="76" height="68"/>
+    </resources>
 </document>

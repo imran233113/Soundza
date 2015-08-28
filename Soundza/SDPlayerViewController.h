@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SABaseContentViewController.h"
 
-@interface SDPlayerViewController : UIViewController
+#import "PlayerManager.h"
+
+@interface SDPlayerViewController : SABaseContentViewController <PlayerManagerDelegate>
 
 @end

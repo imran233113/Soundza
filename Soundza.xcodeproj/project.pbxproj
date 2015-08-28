@@ -27,6 +27,15 @@
 		18994FBE1B8F993F00AEA795 /* SDSearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FBD1B8F993F00AEA795 /* SDSearchResultsTableViewController.m */; };
 		18994FC11B8F99EA00AEA795 /* SDSearchResultsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FC01B8F99EA00AEA795 /* SDSearchResultsTableViewCell.m */; };
 		18994FC41B8FA53900AEA795 /* SDTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FC31B8FA53900AEA795 /* SDTrack.m */; };
+		18994FC91B90C6EC00AEA795 /* Pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18994FC61B90C6EC00AEA795 /* Pause@2x.png */; };
+		18994FCA1B90C6EC00AEA795 /* Play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18994FC71B90C6EC00AEA795 /* Play@2x.png */; };
+		18994FCB1B90C6EC00AEA795 /* PlayLast@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18994FC81B90C6EC00AEA795 /* PlayLast@2x.png */; };
+		18994FCD1B90C6F500AEA795 /* Skip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18994FCC1B90C6F500AEA795 /* Skip@2x.png */; };
+		18994FCF1B90CEBE00AEA795 /* SliderHandle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18994FCE1B90CEBE00AEA795 /* SliderHandle@2x.png */; };
+		18994FD41B90D36500AEA795 /* SAPageRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FD11B90D36500AEA795 /* SAPageRootViewController.m */; };
+		18994FD51B90D36500AEA795 /* SABaseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FD31B90D36500AEA795 /* SABaseContentViewController.m */; };
+		18994FDC1B90D74500AEA795 /* SDQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FDB1B90D74500AEA795 /* SDQueueViewController.m */; };
+		18994FDF1B90DBAE00AEA795 /* PlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FDE1B90DBAE00AEA795 /* PlayerManager.m */; };
 		B95885B332F1329B4E5B6868 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04449D7A4393601368ECD5E6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +84,19 @@
 		18994FC01B8F99EA00AEA795 /* SDSearchResultsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSearchResultsTableViewCell.m; sourceTree = "<group>"; };
 		18994FC21B8FA53900AEA795 /* SDTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTrack.h; sourceTree = "<group>"; };
 		18994FC31B8FA53900AEA795 /* SDTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTrack.m; sourceTree = "<group>"; };
+		18994FC61B90C6EC00AEA795 /* Pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause@2x.png"; sourceTree = "<group>"; };
+		18994FC71B90C6EC00AEA795 /* Play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play@2x.png"; sourceTree = "<group>"; };
+		18994FC81B90C6EC00AEA795 /* PlayLast@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PlayLast@2x.png"; sourceTree = "<group>"; };
+		18994FCC1B90C6F500AEA795 /* Skip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Skip@2x.png"; sourceTree = "<group>"; };
+		18994FCE1B90CEBE00AEA795 /* SliderHandle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SliderHandle@2x.png"; sourceTree = "<group>"; };
+		18994FD01B90D36500AEA795 /* SAPageRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPageRootViewController.h; sourceTree = "<group>"; };
+		18994FD11B90D36500AEA795 /* SAPageRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPageRootViewController.m; sourceTree = "<group>"; };
+		18994FD21B90D36500AEA795 /* SABaseContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SABaseContentViewController.h; sourceTree = "<group>"; };
+		18994FD31B90D36500AEA795 /* SABaseContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SABaseContentViewController.m; sourceTree = "<group>"; };
+		18994FDA1B90D74500AEA795 /* SDQueueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDQueueViewController.h; sourceTree = "<group>"; };
+		18994FDB1B90D74500AEA795 /* SDQueueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDQueueViewController.m; sourceTree = "<group>"; };
+		18994FDD1B90DBAE00AEA795 /* PlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerManager.h; sourceTree = "<group>"; };
+		18994FDE1B90DBAE00AEA795 /* PlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerManager.m; sourceTree = "<group>"; };
 		1AD9D907A69FB546F7B1BAD4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		1F6FDF458636676E0A805C00 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +187,11 @@
 			children = (
 				18994FB31B8F94BC00AEA795 /* SDSoundCloudAPI.h */,
 				18994FB41B8F94BC00AEA795 /* SDSoundCloudAPI.m */,
+				18994FCE1B90CEBE00AEA795 /* SliderHandle@2x.png */,
+				18994FCC1B90C6F500AEA795 /* Skip@2x.png */,
+				18994FC61B90C6EC00AEA795 /* Pause@2x.png */,
+				18994FC71B90C6EC00AEA795 /* Play@2x.png */,
+				18994FC81B90C6EC00AEA795 /* PlayLast@2x.png */,
 				18994FA71B8F8F5D00AEA795 /* Playlists@2x.png */,
 				18994FA81B8F8F5D00AEA795 /* Search@2x.png */,
 				18994FB11B8F90E600AEA795 /* StreamBlack@2x.png */,
@@ -212,8 +239,11 @@
 			isa = PBXGroup;
 			children = (
 				18994FAB1B8F8FC300AEA795 /* Player.storyboard */,
+				18994FD61B90D45B00AEA795 /* Page Controllers */,
 				18994FAD1B8F8FDB00AEA795 /* SDPlayerViewController.h */,
 				18994FAE1B8F8FDB00AEA795 /* SDPlayerViewController.m */,
+				18994FDA1B90D74500AEA795 /* SDQueueViewController.h */,
+				18994FDB1B90D74500AEA795 /* SDQueueViewController.m */,
 			);
 			name = "Player Controllers";
 			sourceTree = "<group>";
@@ -221,10 +251,23 @@
 		18994FC51B8FA54100AEA795 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				18994FDD1B90DBAE00AEA795 /* PlayerManager.h */,
+				18994FDE1B90DBAE00AEA795 /* PlayerManager.m */,
 				18994FC21B8FA53900AEA795 /* SDTrack.h */,
 				18994FC31B8FA53900AEA795 /* SDTrack.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		18994FD61B90D45B00AEA795 /* Page Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				18994FD01B90D36500AEA795 /* SAPageRootViewController.h */,
+				18994FD11B90D36500AEA795 /* SAPageRootViewController.m */,
+				18994FD21B90D36500AEA795 /* SABaseContentViewController.h */,
+				18994FD31B90D36500AEA795 /* SABaseContentViewController.m */,
+			);
+			name = "Page Controllers";
 			sourceTree = "<group>";
 		};
 		5ACBFF33AA453EAC325A276E /* Frameworks */ = {
@@ -327,13 +370,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				18994F751B8F8A4400AEA795 /* Tab.storyboard in Resources */,
+				18994FC91B90C6EC00AEA795 /* Pause@2x.png in Resources */,
 				18994F7A1B8F8A4400AEA795 /* LaunchScreen.xib in Resources */,
+				18994FCF1B90CEBE00AEA795 /* SliderHandle@2x.png in Resources */,
+				18994FCA1B90C6EC00AEA795 /* Play@2x.png in Resources */,
 				18994FB21B8F90E600AEA795 /* StreamBlack@2x.png in Resources */,
 				18994FA91B8F8F5D00AEA795 /* Playlists@2x.png in Resources */,
 				18994F951B8F8D2000AEA795 /* Search.storyboard in Resources */,
 				18994FAA1B8F8F5D00AEA795 /* Search@2x.png in Resources */,
 				18994FAC1B8F8FC300AEA795 /* Player.storyboard in Resources */,
 				18994F9B1B8F8D6300AEA795 /* Playlist.storyboard in Resources */,
+				18994FCD1B90C6F500AEA795 /* Skip@2x.png in Resources */,
+				18994FCB1B90C6EC00AEA795 /* PlayLast@2x.png in Resources */,
 				18994F771B8F8A4400AEA795 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,8 +435,12 @@
 			files = (
 				18994FA31B8F8DFB00AEA795 /* SDPlaylistTableViewController.m in Sources */,
 				18994FB51B8F94BC00AEA795 /* SDSoundCloudAPI.m in Sources */,
+				18994FD41B90D36500AEA795 /* SAPageRootViewController.m in Sources */,
 				18994F6F1B8F8A4400AEA795 /* AppDelegate.m in Sources */,
+				18994FDF1B90DBAE00AEA795 /* PlayerManager.m in Sources */,
 				18994F6C1B8F8A4400AEA795 /* main.m in Sources */,
+				18994FDC1B90D74500AEA795 /* SDQueueViewController.m in Sources */,
+				18994FD51B90D36500AEA795 /* SABaseContentViewController.m in Sources */,
 				18994FC41B8FA53900AEA795 /* SDTrack.m in Sources */,
 				18994FA61B8F8E1800AEA795 /* SDSearchTableViewController.m in Sources */,
 				18994FC11B8F99EA00AEA795 /* SDSearchResultsTableViewCell.m in Sources */,

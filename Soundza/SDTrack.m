@@ -12,6 +12,7 @@ static NSString *const KTrackTitleString = @"title";
 static NSString *const KTrackUserString = @"user";
 static NSString *const KUserUsernameString = @"username";
 static NSString *const KTrackArtworkURLString = @"artwork_url";
+static NSString *const KTrackStreamURLString = @"stream_url";
 
 @implementation SDTrack
 
@@ -21,7 +22,7 @@ static NSString *const KTrackArtworkURLString = @"artwork_url";
     if (self) {
         self.titleString = track[KTrackTitleString];
         self.usernameString = track[KTrackUserString][KUserUsernameString];
-        
+        self.streamURLString = track[KTrackStreamURLString];
         if (![track[KTrackArtworkURLString] isEqual:[NSNull null]]) {
             self.artworkURLString = track[KTrackArtworkURLString];
         }

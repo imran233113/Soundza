@@ -13,6 +13,7 @@
 @property (strong, nonatomic) NSString *usernameString;
 @property (strong, nonatomic) NSString *streamURLString;
 @property (strong, nonatomic) NSString *artworkURLString;
+@property (strong, nonatomic) NSNumber *duration;
 
 -(id)initWithTrack:(NSDictionary *)track;
 
