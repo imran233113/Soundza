@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SDSearchResultsTableViewCell.h"
 
-@interface SDSearchResultsTableViewController : UITableViewController
+@interface SDSearchResultsTableViewController : UITableViewController <SDSearchCellDelegate>
 @property (strong, nonatomic) NSString *genreString;
 @property (strong, nonatomic) NSString *searchString;
 @end

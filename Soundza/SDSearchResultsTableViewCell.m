@@ -16,6 +16,11 @@
 
 -(void)setDisplayForTrack:(SDTrack *)track
 {
+    
+    self.longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(onSelfLongPressDetected:)];
+    self.longPressGesture.minimumPressDuration = .8;
+    [self addGestureRecognizer:self.longPressGesture];
+    
     self.titleLabel.text = track.titleString;
     self.usernameLabel.text = track.usernameString;
     
@@ -36,5 +41,12 @@
         }
 
     }];
+}
+
+-(void)onSelfLongPressDetected:(UILongPressGestureRecognizer *)longPressGestRec
+{
+    if (longPressGestRec.state == UIGestureRecognizerStateBegan) {
+        [self.searchDelegate longPressOnCell:self];
+    }
 }
 @end

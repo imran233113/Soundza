@@ -7,7 +7,6 @@
 //
 
 #import "SDSearchResultsTableViewController.h"
-#import "SDSearchResultsTableViewCell.h"
 #import "SDSoundCloudAPI.h"
 #import "SDTrack.h"
 #import "PlayerManager.h"
@@ -57,10 +56,10 @@ static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
     return self.searchResults.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SDSearchResultsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:KSearchResultsTableViewCellReuseID forIndexPath:indexPath];
     SDTrack *track = self.searchResults[indexPath.row];
+    cell.searchDelegate = self;
     [cell setDisplayForTrack:track];
     return cell;
 }
@@ -69,6 +68,15 @@ static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
 {
     SDTrack *track = self.searchResults[indexPath.row];
     [[PlayerManager sharedManager]playTrackOnce:track trackIndex:indexPath.row];
+}
+
+#pragma mark - SDSearchCellDelegate
+
+-(void)longPressOnCell:(UITableViewCell *)cell
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    SDTrack *selectedTrack = self.searchResults[indexPath.row];
+    [[PlayerManager sharedManager]enqueueTrack:selectedTrack];
 }
 
 #pragma mark - Private Methods
@@ -103,5 +111,6 @@ static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
     }
     
 }
+
 
 @end

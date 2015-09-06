@@ -179,6 +179,8 @@
     self.playPauseButton.enabled = NO;
     self.playLastButton.alpha = .55;
     self.playLastButton.enabled = NO;
+    
+    [self.slider setValue:0.0 animated:YES];
 }
 
 

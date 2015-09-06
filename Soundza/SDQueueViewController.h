@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SABaseContentViewController.h"
 
-@interface SDQueueViewController : SABaseContentViewController
+@interface SDQueueViewController : SABaseContentViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
