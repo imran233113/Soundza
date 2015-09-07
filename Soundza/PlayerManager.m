@@ -11,6 +11,7 @@
 #import <MediaPlayer/MPNowPlayingInfoCenter.h>
 #import <MediaPlayer/MPMediaQuery.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "RLMTrack.h"
 
 @implementation PlayerManager
 
@@ -177,10 +178,9 @@
     [[NSNotificationCenter defaultCenter]postNotificationName:@"updatedPlayer" object:nil];
 }
 
--(void)playPlaylist:(NSString *)playlistName tracks:(NSMutableArray *)tracks beginingAtIndex:(NSInteger)index;
+-(void)playPlaylistTracks:(NSMutableArray *)tracks beginingAtIndex:(NSInteger)index;
 {
     self.playingFromSearch = NO;
-    self.playlistName = playlistName;
     self.playingFromPlaylist = YES;
     self.playlist = tracks;
     self.currentPlaylistIndex = index;

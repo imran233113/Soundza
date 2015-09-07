@@ -87,7 +87,6 @@ static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
     selectedTrack.isSaved = YES;
     [self.tableView reloadData];
     [[PlaylistManager sharedManager]saveTrack:selectedTrack];
-    NSLog(@"%@", [PlaylistManager sharedManager].playlist);
 }
 
 #pragma mark - Private Methods

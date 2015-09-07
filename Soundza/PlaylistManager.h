@@ -18,6 +18,9 @@
 
 @property (strong, nonatomic) RLMPlaylist *playlist;
 
+-(void)parseTracks:(RLMArray *)tracks withCompletion:(void(^)(NSArray *parsedTracks))completion;
+
+
 -(void)createNewPlaylistWithTitle:(NSString *)title;
 -(void)saveTrack:(SDTrack *)track;
 

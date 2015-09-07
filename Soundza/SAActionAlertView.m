@@ -29,7 +29,7 @@
     [self.view addSubview:self];
     self.center = self.superview.center;
     self.transform = CGAffineTransformMakeScale(0.01, 0.01);
-    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:0.20 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.transform = CGAffineTransformIdentity;
     } completion:^(BOOL finished){
         [UIView animateWithDuration:.2 delay:1.25 options:UIViewAnimationOptionCurveEaseOut animations:^{

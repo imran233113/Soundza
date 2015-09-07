@@ -48,6 +48,29 @@
     [defaultRealm beginWriteTransaction];
     [self.playlist.tracks addObject:savedTrack];
     [defaultRealm commitWriteTransaction];
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"songSaved" object:nil];
+}
+
+-(void)parseTracks:(RLMArray *)tracks withCompletion:(void(^)(NSArray *parsedTracks))completion;
+{
+    NSMutableArray *result = [[NSMutableArray alloc]init];
+    for (RLMTrack *trk in tracks) {
+        SDTrack *track = [[SDTrack alloc]init];
+        
+        track.streamURLString = trk.streamURLString;
+        track.artworkURLString = trk.artworkURLString;
+        track.titleString = trk.titleString;
+        track.usernameString = trk.usernameString;
+        track.duration = [NSNumber numberWithInteger:trk.duration];
+        track.isSaved = YES;
+        
+        [result addObject:track];
+    }
+    
+    if (completion) {
+        completion(result);
+    }
 }
 
 @end

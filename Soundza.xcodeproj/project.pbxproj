@@ -16,7 +16,6 @@
 		18994F921B8F8C6300AEA795 /* SDTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994F911B8F8C6300AEA795 /* SDTabBarViewController.m */; };
 		18994F951B8F8D2000AEA795 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18994F941B8F8D2000AEA795 /* Search.storyboard */; };
 		18994F9B1B8F8D6300AEA795 /* Playlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18994F9A1B8F8D6300AEA795 /* Playlist.storyboard */; };
-		18994FA31B8F8DFB00AEA795 /* SDPlaylistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FA21B8F8DFB00AEA795 /* SDPlaylistTableViewController.m */; };
 		18994FA61B8F8E1800AEA795 /* SDSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FA51B8F8E1800AEA795 /* SDSearchTableViewController.m */; };
 		18994FA91B8F8F5D00AEA795 /* Playlists@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18994FA71B8F8F5D00AEA795 /* Playlists@2x.png */; };
 		18994FAA1B8F8F5D00AEA795 /* Search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18994FA81B8F8F5D00AEA795 /* Search@2x.png */; };
@@ -45,6 +44,8 @@
 		18994FF51B9DF09200AEA795 /* PlaylistManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FF41B9DF09200AEA795 /* PlaylistManager.m */; };
 		18994FF81B9DF21100AEA795 /* RLMTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FF71B9DF21100AEA795 /* RLMTrack.m */; };
 		18994FFB1B9DF48600AEA795 /* RLMPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FFA1B9DF48600AEA795 /* RLMPlaylist.m */; };
+		18994FFE1B9E028000AEA795 /* SDPlaylistTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FFD1B9E028000AEA795 /* SDPlaylistTableViewCell.m */; };
+		189950011B9E0C3300AEA795 /* SDPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189950001B9E0C3300AEA795 /* SDPlaylistViewController.m */; };
 		B95885B332F1329B4E5B6868 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04449D7A4393601368ECD5E6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -75,8 +76,6 @@
 		18994F911B8F8C6300AEA795 /* SDTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTabBarViewController.m; sourceTree = "<group>"; };
 		18994F941B8F8D2000AEA795 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		18994F9A1B8F8D6300AEA795 /* Playlist.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Playlist.storyboard; sourceTree = "<group>"; };
-		18994FA11B8F8DFB00AEA795 /* SDPlaylistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPlaylistTableViewController.h; sourceTree = "<group>"; };
-		18994FA21B8F8DFB00AEA795 /* SDPlaylistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPlaylistTableViewController.m; sourceTree = "<group>"; };
 		18994FA41B8F8E1800AEA795 /* SDSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDSearchTableViewController.h; sourceTree = "<group>"; };
 		18994FA51B8F8E1800AEA795 /* SDSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSearchTableViewController.m; sourceTree = "<group>"; };
 		18994FA71B8F8F5D00AEA795 /* Playlists@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Playlists@2x.png"; sourceTree = "<group>"; };
@@ -120,6 +119,10 @@
 		18994FF71B9DF21100AEA795 /* RLMTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLMTrack.m; sourceTree = "<group>"; };
 		18994FF91B9DF48600AEA795 /* RLMPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLMPlaylist.h; sourceTree = "<group>"; };
 		18994FFA1B9DF48600AEA795 /* RLMPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLMPlaylist.m; sourceTree = "<group>"; };
+		18994FFC1B9E028000AEA795 /* SDPlaylistTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPlaylistTableViewCell.h; sourceTree = "<group>"; };
+		18994FFD1B9E028000AEA795 /* SDPlaylistTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPlaylistTableViewCell.m; sourceTree = "<group>"; };
+		18994FFF1B9E0C3300AEA795 /* SDPlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPlaylistViewController.h; sourceTree = "<group>"; };
+		189950001B9E0C3300AEA795 /* SDPlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPlaylistViewController.m; sourceTree = "<group>"; };
 		1AD9D907A69FB546F7B1BAD4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		1F6FDF458636676E0A805C00 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -249,8 +252,10 @@
 			isa = PBXGroup;
 			children = (
 				18994F9A1B8F8D6300AEA795 /* Playlist.storyboard */,
-				18994FA11B8F8DFB00AEA795 /* SDPlaylistTableViewController.h */,
-				18994FA21B8F8DFB00AEA795 /* SDPlaylistTableViewController.m */,
+				18994FFF1B9E0C3300AEA795 /* SDPlaylistViewController.h */,
+				189950001B9E0C3300AEA795 /* SDPlaylistViewController.m */,
+				18994FFC1B9E028000AEA795 /* SDPlaylistTableViewCell.h */,
+				18994FFD1B9E028000AEA795 /* SDPlaylistTableViewCell.m */,
 			);
 			name = "Playlist Controllers";
 			sourceTree = "<group>";
@@ -487,14 +492,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18994FA31B8F8DFB00AEA795 /* SDPlaylistTableViewController.m in Sources */,
 				18994FB51B8F94BC00AEA795 /* SDSoundCloudAPI.m in Sources */,
 				18994FD41B90D36500AEA795 /* SAPageRootViewController.m in Sources */,
 				18994FEC1B9B729B00AEA795 /* SAActionAlertView.m in Sources */,
 				18994F6F1B8F8A4400AEA795 /* AppDelegate.m in Sources */,
+				189950011B9E0C3300AEA795 /* SDPlaylistViewController.m in Sources */,
 				18994FDF1B90DBAE00AEA795 /* PlayerManager.m in Sources */,
 				18994F6C1B8F8A4400AEA795 /* main.m in Sources */,
 				18994FF81B9DF21100AEA795 /* RLMTrack.m in Sources */,
+				18994FFE1B9E028000AEA795 /* SDPlaylistTableViewCell.m in Sources */,
 				18994FDC1B90D74500AEA795 /* SDQueueViewController.m in Sources */,
 				18994FD51B90D36500AEA795 /* SABaseContentViewController.m in Sources */,
 				18994FC41B8FA53900AEA795 /* SDTrack.m in Sources */,

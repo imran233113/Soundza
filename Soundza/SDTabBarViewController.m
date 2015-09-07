@@ -11,6 +11,7 @@
 
 @interface SDTabBarViewController ()
 @property (strong, nonatomic) SAActionAlertView *alertView;
+@property (strong, nonatomic) SAActionAlertView *saveAlert;
 @end
 
 @implementation SDTabBarViewController
@@ -48,6 +49,13 @@
     
     self.alertView = [[SAActionAlertView alloc]initWithTitle:@"Song Queued" view:self.view];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(songQueuedNotification:) name:@"songQueued" object:nil];
+    self.saveAlert = [[SAActionAlertView alloc]initWithTitle:@"Song Saved" view:self.view];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(songSavedNotification:) name:@"songSaved" object:nil];
+
+}
+-(void)songSavedNotification:(NSNotification *)note
+{
+    [self.saveAlert animate];
 }
 
 -(void)songQueuedNotification:(NSNotification *)note
