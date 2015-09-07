@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="70" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="aJ9-GY-vLT">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
                                 <color key="backgroundColor" red="0.99991267919540405" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Playlist" rowHeight="70" id="G4c-7W-81z" customClass="SDPlaylistTableViewCell">
@@ -42,13 +42,13 @@
                                                     <rect key="frame" x="8" y="5" width="59" height="59"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i22-Ia-4nc">
-                                                    <rect key="frame" x="75" y="37" width="237" height="15"/>
+                                                    <rect key="frame" x="75" y="37" width="190" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVi-Pe-jM1">
-                                                    <rect key="frame" x="75" y="18" width="237" height="18"/>
+                                                    <rect key="frame" x="75" y="18" width="190" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -63,13 +63,34 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHc-TX-uMT">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem title="Rename" id="KCb-9g-lPU">
+                                        <color key="tintColor" red="0.92756050825119019" green="0.37825459241867065" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="renameBarButtonPressed:" destination="76G-HN-Of5" id="EkX-nS-jpr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hgS-1p-Rch"/>
+                                    <barButtonItem title="Edit" id="vZ5-IM-vWa">
+                                        <color key="tintColor" red="0.92756050825119019" green="0.37825459241867065" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="editBarButtonPressed:" destination="76G-HN-Of5" id="Syy-29-VUD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="zDB-ni-MlD"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="editBarButton" destination="vZ5-IM-vWa" id="4XQ-bN-taV"/>
+                        <outlet property="renameBarButton" destination="KCb-9g-lPU" id="n98-W1-27H"/>
                         <outlet property="tableView" destination="aJ9-GY-vLT" id="z9a-t9-YRE"/>
+                        <outlet property="toolBar" destination="EHc-TX-uMT" id="Orc-zE-IDj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8IC-Uk-o6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
