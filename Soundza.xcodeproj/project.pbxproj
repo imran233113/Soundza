@@ -40,6 +40,11 @@
 		18994FE71B9B71AA00AEA795 /* ActionAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18994FE61B9B71AA00AEA795 /* ActionAlertView.xib */; };
 		18994FE91B9B71D200AEA795 /* CheckMark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18994FE81B9B71D200AEA795 /* CheckMark@2x.png */; };
 		18994FEC1B9B729B00AEA795 /* SAActionAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FEB1B9B729B00AEA795 /* SAActionAlertView.m */; };
+		18994FEF1B9CA8D000AEA795 /* CheckMarkOrange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18994FED1B9CA8D000AEA795 /* CheckMarkOrange@2x.png */; };
+		18994FF21B9CAB3F00AEA795 /* Plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18994FF11B9CAB3F00AEA795 /* Plus@2x.png */; };
+		18994FF51B9DF09200AEA795 /* PlaylistManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FF41B9DF09200AEA795 /* PlaylistManager.m */; };
+		18994FF81B9DF21100AEA795 /* RLMTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FF71B9DF21100AEA795 /* RLMTrack.m */; };
+		18994FFB1B9DF48600AEA795 /* RLMPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FFA1B9DF48600AEA795 /* RLMPlaylist.m */; };
 		B95885B332F1329B4E5B6868 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04449D7A4393601368ECD5E6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +112,14 @@
 		18994FE81B9B71D200AEA795 /* CheckMark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CheckMark@2x.png"; sourceTree = "<group>"; };
 		18994FEA1B9B729B00AEA795 /* SAActionAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAActionAlertView.h; sourceTree = "<group>"; };
 		18994FEB1B9B729B00AEA795 /* SAActionAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAActionAlertView.m; sourceTree = "<group>"; };
+		18994FED1B9CA8D000AEA795 /* CheckMarkOrange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CheckMarkOrange@2x.png"; sourceTree = "<group>"; };
+		18994FF11B9CAB3F00AEA795 /* Plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plus@2x.png"; sourceTree = "<group>"; };
+		18994FF31B9DF09200AEA795 /* PlaylistManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistManager.h; sourceTree = "<group>"; };
+		18994FF41B9DF09200AEA795 /* PlaylistManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistManager.m; sourceTree = "<group>"; };
+		18994FF61B9DF21100AEA795 /* RLMTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLMTrack.h; sourceTree = "<group>"; };
+		18994FF71B9DF21100AEA795 /* RLMTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLMTrack.m; sourceTree = "<group>"; };
+		18994FF91B9DF48600AEA795 /* RLMPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLMPlaylist.h; sourceTree = "<group>"; };
+		18994FFA1B9DF48600AEA795 /* RLMPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLMPlaylist.m; sourceTree = "<group>"; };
 		1AD9D907A69FB546F7B1BAD4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		1F6FDF458636676E0A805C00 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -262,6 +275,12 @@
 			children = (
 				18994FDD1B90DBAE00AEA795 /* PlayerManager.h */,
 				18994FDE1B90DBAE00AEA795 /* PlayerManager.m */,
+				18994FF31B9DF09200AEA795 /* PlaylistManager.h */,
+				18994FF41B9DF09200AEA795 /* PlaylistManager.m */,
+				18994FF61B9DF21100AEA795 /* RLMTrack.h */,
+				18994FF71B9DF21100AEA795 /* RLMTrack.m */,
+				18994FF91B9DF48600AEA795 /* RLMPlaylist.h */,
+				18994FFA1B9DF48600AEA795 /* RLMPlaylist.m */,
 				18994FC21B8FA53900AEA795 /* SDTrack.h */,
 				18994FC31B8FA53900AEA795 /* SDTrack.m */,
 			);
@@ -282,6 +301,8 @@
 		18994FE01B90F93300AEA795 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				18994FF11B9CAB3F00AEA795 /* Plus@2x.png */,
+				18994FED1B9CA8D000AEA795 /* CheckMarkOrange@2x.png */,
 				18994FE81B9B71D200AEA795 /* CheckMark@2x.png */,
 				18994FCC1B90C6F500AEA795 /* Skip@2x.png */,
 				18994FC61B90C6EC00AEA795 /* Pause@2x.png */,
@@ -402,6 +423,7 @@
 				18994FC91B90C6EC00AEA795 /* Pause@2x.png in Resources */,
 				18994F7A1B8F8A4400AEA795 /* LaunchScreen.xib in Resources */,
 				18994FE71B9B71AA00AEA795 /* ActionAlertView.xib in Resources */,
+				18994FEF1B9CA8D000AEA795 /* CheckMarkOrange@2x.png in Resources */,
 				18994FCF1B90CEBE00AEA795 /* SliderHandle@2x.png in Resources */,
 				18994FCA1B90C6EC00AEA795 /* Play@2x.png in Resources */,
 				18994FE91B9B71D200AEA795 /* CheckMark@2x.png in Resources */,
@@ -411,6 +433,7 @@
 				18994FAA1B8F8F5D00AEA795 /* Search@2x.png in Resources */,
 				18994FAC1B8F8FC300AEA795 /* Player.storyboard in Resources */,
 				18994F9B1B8F8D6300AEA795 /* Playlist.storyboard in Resources */,
+				18994FF21B9CAB3F00AEA795 /* Plus@2x.png in Resources */,
 				18994FCD1B90C6F500AEA795 /* Skip@2x.png in Resources */,
 				18994FCB1B90C6EC00AEA795 /* PlayLast@2x.png in Resources */,
 				18994F771B8F8A4400AEA795 /* Images.xcassets in Resources */,
@@ -471,13 +494,16 @@
 				18994F6F1B8F8A4400AEA795 /* AppDelegate.m in Sources */,
 				18994FDF1B90DBAE00AEA795 /* PlayerManager.m in Sources */,
 				18994F6C1B8F8A4400AEA795 /* main.m in Sources */,
+				18994FF81B9DF21100AEA795 /* RLMTrack.m in Sources */,
 				18994FDC1B90D74500AEA795 /* SDQueueViewController.m in Sources */,
 				18994FD51B90D36500AEA795 /* SABaseContentViewController.m in Sources */,
 				18994FC41B8FA53900AEA795 /* SDTrack.m in Sources */,
+				18994FF51B9DF09200AEA795 /* PlaylistManager.m in Sources */,
 				18994FA61B8F8E1800AEA795 /* SDSearchTableViewController.m in Sources */,
 				18994FC11B8F99EA00AEA795 /* SDSearchResultsTableViewCell.m in Sources */,
 				18994FE51B9B683300AEA795 /* SDQueueTableViewCell.m in Sources */,
 				18994FAF1B8F8FDB00AEA795 /* SDPlayerViewController.m in Sources */,
+				18994FFB1B9DF48600AEA795 /* RLMPlaylist.m in Sources */,
 				18994F921B8F8C6300AEA795 /* SDTabBarViewController.m in Sources */,
 				18994FBE1B8F993F00AEA795 /* SDSearchResultsTableViewController.m in Sources */,
 			);

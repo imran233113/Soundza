@@ -10,6 +10,7 @@
 #import "SDSoundCloudAPI.h"
 #import "SDTrack.h"
 #import "PlayerManager.h"
+#import "PlaylistManager.h"
 
 static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
 
@@ -77,6 +78,16 @@ static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     SDTrack *selectedTrack = self.searchResults[indexPath.row];
     [[PlayerManager sharedManager]enqueueTrack:selectedTrack];
+}
+
+-(void)plusButtonPressedOnCell:(UITableViewCell *)cell
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    SDTrack *selectedTrack = self.searchResults[indexPath.row];
+    selectedTrack.isSaved = YES;
+    [self.tableView reloadData];
+    [[PlaylistManager sharedManager]saveTrack:selectedTrack];
+    NSLog(@"%@", [PlaylistManager sharedManager].playlist);
 }
 
 #pragma mark - Private Methods

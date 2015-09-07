@@ -39,8 +39,36 @@
         } else {
             weakSelf.albumArtImageView.alpha = 1;
         }
-
     }];
+    
+    if (track.isSaved) {
+        [self.plusButton setImage:[UIImage imageNamed:@"CheckMarkOrange"] forState:UIControlStateNormal];
+        self.plusButton.enabled = NO;
+    }
+    else{
+        [self.plusButton setImage:[UIImage imageNamed:@"Plus"] forState:UIControlStateNormal];
+        self.plusButton.enabled = YES;
+    }
+    
+}
+
+- (IBAction)plusButtonPressed:(id)sender
+{
+    [UIView animateWithDuration:0.3/1.5 animations:^{
+        self.plusButton.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.2, 1.2);
+        [self.plusButton setImage:[UIImage imageNamed:@"CheckMarkOrange"] forState:UIControlStateNormal];
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.3/2 animations:^{
+            self.plusButton.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.8, 0.8);
+            
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.3/2 animations:^{
+                self.plusButton.transform = CGAffineTransformIdentity;
+            }];
+        }];
+    }];
+    
+    [self.searchDelegate plusButtonPressedOnCell:self];
 }
 
 -(void)onSelfLongPressDetected:(UILongPressGestureRecognizer *)longPressGestRec

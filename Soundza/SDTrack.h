@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSString *streamURLString;
 @property (strong, nonatomic) NSString *artworkURLString;
 @property (strong, nonatomic) NSNumber *duration;
+@property (assign, nonatomic) BOOL isSaved;
 
 -(id)initWithTrack:(NSDictionary *)track;
 

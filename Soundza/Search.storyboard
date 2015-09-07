@@ -63,21 +63,32 @@
                                             <rect key="frame" x="8" y="5" width="59" height="59"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFA-4m-jLW">
-                                            <rect key="frame" x="75" y="17" width="237" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <rect key="frame" x="75" y="18" width="194" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACn-rr-LU0">
-                                            <rect key="frame" x="75" y="36" width="237" height="17"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <rect key="frame" x="75" y="34" width="194" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xY-Fq-Pzf">
+                                            <rect key="frame" x="268" y="14" width="44" height="44"/>
+                                            <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                            <state key="normal" image="Plus.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="plusButtonPressed:" destination="imV-LH-wrz" eventType="touchUpInside" id="FU4-VS-g7C"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="albumArtImageView" destination="jY6-DN-H2m" id="RFv-Wg-uUx"/>
+                                    <outlet property="plusButton" destination="7xY-Fq-Pzf" id="bqL-kE-AXr"/>
                                     <outlet property="titleLabel" destination="oFA-4m-jLW" id="CmL-KV-cwT"/>
                                     <outlet property="usernameLabel" destination="ACn-rr-LU0" id="WLG-xu-08g"/>
                                 </connections>
@@ -118,4 +129,7 @@
             <point key="canvasLocation" x="265" y="339"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Plus.png" width="31" height="31"/>
+    </resources>
 </document>

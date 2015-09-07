@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
+#import "PlaylistManager.h"
 
 @interface AppDelegate ()
 
@@ -28,7 +29,25 @@
     [[AVAudioSession sharedInstance] setActive: YES error: &activationError];
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self becomeFirstResponder];
-
+    
+    //set the player page index to the first.
+    NSNumber *one = [NSNumber numberWithInt:0];
+    [[NSUserDefaults standardUserDefaults] setObject:one forKey:@"pageIndex"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    
+    //The app has loaded for the first time, create the first playlist and save it.
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
+    {
+        
+        [[PlaylistManager sharedManager]createNewPlaylistWithTitle:@"Playlist"];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
+    RLMResults *firstPlaylist = [[RLMPlaylist allObjects]firstObject];
+    [PlaylistManager sharedManager].playlist = (RLMPlaylist *)firstPlaylist;
     
     return YES;
 }
