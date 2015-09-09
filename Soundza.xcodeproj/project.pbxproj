@@ -46,6 +46,9 @@
 		18994FFB1B9DF48600AEA795 /* RLMPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FFA1B9DF48600AEA795 /* RLMPlaylist.m */; };
 		18994FFE1B9E028000AEA795 /* SDPlaylistTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994FFD1B9E028000AEA795 /* SDPlaylistTableViewCell.m */; };
 		189950011B9E0C3300AEA795 /* SDPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189950001B9E0C3300AEA795 /* SDPlaylistViewController.m */; };
+		1899500B1BA0984700AEA795 /* List@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1899500A1BA0984700AEA795 /* List@2x.png */; };
+		1899500E1BA099CD00AEA795 /* SDPlaylistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899500D1BA099CD00AEA795 /* SDPlaylistsViewController.m */; };
+		189950111BA09CF500AEA795 /* SDPlaylistsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189950101BA09CF500AEA795 /* SDPlaylistsTableViewCell.m */; };
 		B95885B332F1329B4E5B6868 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04449D7A4393601368ECD5E6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +126,11 @@
 		18994FFD1B9E028000AEA795 /* SDPlaylistTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPlaylistTableViewCell.m; sourceTree = "<group>"; };
 		18994FFF1B9E0C3300AEA795 /* SDPlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPlaylistViewController.h; sourceTree = "<group>"; };
 		189950001B9E0C3300AEA795 /* SDPlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPlaylistViewController.m; sourceTree = "<group>"; };
+		1899500A1BA0984700AEA795 /* List@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "List@2x.png"; sourceTree = "<group>"; };
+		1899500C1BA099CD00AEA795 /* SDPlaylistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPlaylistsViewController.h; sourceTree = "<group>"; };
+		1899500D1BA099CD00AEA795 /* SDPlaylistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPlaylistsViewController.m; sourceTree = "<group>"; };
+		1899500F1BA09CF500AEA795 /* SDPlaylistsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPlaylistsTableViewCell.h; sourceTree = "<group>"; };
+		189950101BA09CF500AEA795 /* SDPlaylistsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPlaylistsTableViewCell.m; sourceTree = "<group>"; };
 		1AD9D907A69FB546F7B1BAD4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		1F6FDF458636676E0A805C00 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -254,6 +262,10 @@
 				18994F9A1B8F8D6300AEA795 /* Playlist.storyboard */,
 				18994FFF1B9E0C3300AEA795 /* SDPlaylistViewController.h */,
 				189950001B9E0C3300AEA795 /* SDPlaylistViewController.m */,
+				1899500C1BA099CD00AEA795 /* SDPlaylistsViewController.h */,
+				1899500D1BA099CD00AEA795 /* SDPlaylistsViewController.m */,
+				1899500F1BA09CF500AEA795 /* SDPlaylistsTableViewCell.h */,
+				189950101BA09CF500AEA795 /* SDPlaylistsTableViewCell.m */,
 				18994FFC1B9E028000AEA795 /* SDPlaylistTableViewCell.h */,
 				18994FFD1B9E028000AEA795 /* SDPlaylistTableViewCell.m */,
 			);
@@ -306,6 +318,7 @@
 		18994FE01B90F93300AEA795 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				1899500A1BA0984700AEA795 /* List@2x.png */,
 				18994FF11B9CAB3F00AEA795 /* Plus@2x.png */,
 				18994FED1B9CA8D000AEA795 /* CheckMarkOrange@2x.png */,
 				18994FE81B9B71D200AEA795 /* CheckMark@2x.png */,
@@ -427,6 +440,7 @@
 				18994F751B8F8A4400AEA795 /* Tab.storyboard in Resources */,
 				18994FC91B90C6EC00AEA795 /* Pause@2x.png in Resources */,
 				18994F7A1B8F8A4400AEA795 /* LaunchScreen.xib in Resources */,
+				1899500B1BA0984700AEA795 /* List@2x.png in Resources */,
 				18994FE71B9B71AA00AEA795 /* ActionAlertView.xib in Resources */,
 				18994FEF1B9CA8D000AEA795 /* CheckMarkOrange@2x.png in Resources */,
 				18994FCF1B90CEBE00AEA795 /* SliderHandle@2x.png in Resources */,
@@ -504,6 +518,7 @@
 				18994FDC1B90D74500AEA795 /* SDQueueViewController.m in Sources */,
 				18994FD51B90D36500AEA795 /* SABaseContentViewController.m in Sources */,
 				18994FC41B8FA53900AEA795 /* SDTrack.m in Sources */,
+				189950111BA09CF500AEA795 /* SDPlaylistsTableViewCell.m in Sources */,
 				18994FF51B9DF09200AEA795 /* PlaylistManager.m in Sources */,
 				18994FA61B8F8E1800AEA795 /* SDSearchTableViewController.m in Sources */,
 				18994FC11B8F99EA00AEA795 /* SDSearchResultsTableViewCell.m in Sources */,
@@ -511,6 +526,7 @@
 				18994FAF1B8F8FDB00AEA795 /* SDPlayerViewController.m in Sources */,
 				18994FFB1B9DF48600AEA795 /* RLMPlaylist.m in Sources */,
 				18994F921B8F8C6300AEA795 /* SDTabBarViewController.m in Sources */,
+				1899500E1BA099CD00AEA795 /* SDPlaylistsViewController.m in Sources */,
 				18994FBE1B8F993F00AEA795 /* SDSearchResultsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

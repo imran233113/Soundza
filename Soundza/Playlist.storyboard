@@ -84,18 +84,91 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zDB-ni-MlD"/>
+                    <navigationItem key="navigationItem" id="zDB-ni-MlD">
+                        <barButtonItem key="leftBarButtonItem" image="List.png" id="mgh-gT-UB9">
+                            <connections>
+                                <action selector="playlistNavButtonPressed:" destination="76G-HN-Of5" id="VUq-WW-vpq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="editBarButton" destination="vZ5-IM-vWa" id="4XQ-bN-taV"/>
                         <outlet property="renameBarButton" destination="KCb-9g-lPU" id="n98-W1-27H"/>
                         <outlet property="tableView" destination="aJ9-GY-vLT" id="z9a-t9-YRE"/>
                         <outlet property="toolBar" destination="EHc-TX-uMT" id="Orc-zE-IDj"/>
+                        <segue destination="JC6-1G-eQ1" kind="presentation" identifier="toPlaylistsVC" modalTransitionStyle="coverVertical" id="pfY-lC-IFM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8IC-Uk-o6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="664" y="383"/>
+        </scene>
+        <!--Playlists View Controller-->
+        <scene sceneID="Xsy-cT-dsx">
+            <objects>
+                <viewController id="JC6-1G-eQ1" customClass="SDPlaylistsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fBc-No-qXh"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Ov-lx-84T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="86p-QW-q6y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8j4-c1-dEJ">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <color key="barTintColor" red="0.99991267919540405" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="Playlists" id="ypu-fM-vVx">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="bb8-Zy-zb1">
+                                            <connections>
+                                                <action selector="backBarButtonPressed:" destination="JC6-1G-eQ1" id="Laz-Ed-pRO"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="70" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y5l-ct-J9k">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" red="0.99991267919540405" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Playlists" rowHeight="70" id="Z9V-IN-oBJ" customClass="SDPlaylistsTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z9V-IN-oBJ" id="fKY-bs-dK9">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WBU-37-74b">
+                                                    <rect key="frame" x="8" y="5" width="59" height="59"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1P-fY-Cd7">
+                                                    <rect key="frame" x="75" y="24" width="195" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artworkImageView" destination="WBU-37-74b" id="BEX-nF-Ie3"/>
+                                            <outlet property="titleLabel" destination="P1P-fY-Cd7" id="dVz-49-o5N"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="navBar" destination="8j4-c1-dEJ" id="oqr-dM-Cem"/>
+                        <outlet property="tableView" destination="Y5l-ct-J9k" id="scU-fK-RCu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nbr-iM-Pbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="664" y="1051"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rCe-UY-ak5">
@@ -121,4 +194,7 @@
             <point key="canvasLocation" x="271" y="383"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="List.png" width="22" height="15"/>
+    </resources>
 </document>

@@ -23,6 +23,7 @@ static NSString *const KTableViewReuseIdentitifer = @"Playlist";
 @property (assign, nonatomic) BOOL editSelected;
 - (IBAction)editBarButtonPressed:(id)sender;
 - (IBAction)renameBarButtonPressed:(id)sender;
+- (IBAction)playlistNavButtonPressed:(id)sender;
 @end
 
 @implementation SDPlaylistViewController
@@ -48,6 +49,11 @@ static NSString *const KTableViewReuseIdentitifer = @"Playlist";
 -(void)trackSavedNotification:(NSNotification *)notification
 {
     [self parseTracksReloadTableView];
+    
+    //If the user is playing from the playlist and has updated the playist, make sure to reasign the tracks so they are updated
+    if ([PlayerManager sharedManager].playingFromPlaylist) {
+        [PlayerManager sharedManager].playlist = self.tracks;
+    }
 }
 
 #pragma mark - Table view data source
@@ -160,6 +166,11 @@ static NSString *const KTableViewReuseIdentitifer = @"Playlist";
 - (IBAction)renameBarButtonPressed:(id)sender
 {
     
+}
+
+- (IBAction)playlistNavButtonPressed:(id)sender
+{
+    [self performSegueWithIdentifier:@"toPlaylistsVC" sender:nil];
 }
 
 #pragma mark - Local Methods
