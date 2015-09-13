@@ -17,9 +17,12 @@ static NSString *const KTableViewNewReuseIdentitifer = @"New";
 
 @interface SDPlaylistsViewController ()
 @property (strong, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *editBarButton;
+@property (assign, nonatomic) BOOL editSelected;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UITextField *createTextField;
 - (IBAction)backBarButtonPressed:(id)sender;
+- (IBAction)editButtonPressed:(id)sender;
 
 @property (strong, nonatomic) RLMResults *playlists;
 @end
@@ -92,6 +95,58 @@ static NSString *const KTableViewNewReuseIdentitifer = @"New";
     [self.createTextField resignFirstResponder];
 }
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0)
+        return NO;
+    else
+        return YES;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        BOOL isCurrent = NO;
+        
+        RLMPlaylist *playlist = self.playlists[indexPath.row];
+        
+        //Check if the user is deleting the current playlist
+        if ([playlist isEqualToObject:[PlaylistManager sharedManager].playlist]) {
+            isCurrent = YES;
+        }
+        
+        RLMRealm *defaultRealm = self.playlists.realm;
+        [defaultRealm beginWriteTransaction];
+        [defaultRealm deleteObject:playlist];
+        [defaultRealm commitWriteTransaction];
+        
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        
+        //User is deleting the current playist.
+        if (isCurrent) {
+            //If there is more than one playlist, make the first playlist current
+            if (self.playlists.count > 1) {
+                RLMPlaylist *playlist = self.playlists.firstObject;
+                [PlaylistManager sharedManager].playlist = playlist;
+                RLMRealm *defaultRealm = self.playlists.realm;
+                [defaultRealm beginWriteTransaction];
+                playlist.isCurrent = YES;
+                [defaultRealm commitWriteTransaction];
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"playlistUpdated" object:nil];
+                [self.tableView reloadData];
+            }
+            //If there is only one playlist, create a new emtpy playlist
+            else{
+                [[PlaylistManager sharedManager]createNewPlaylistWithTitle:@"Playlist"];
+                [self editButtonPressed:nil];
+                [self.tableView reloadData];
+            }
+        }
+        
+    }
+}
+
 #pragma mark - UITextField Delegate
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField
@@ -120,6 +175,22 @@ static NSString *const KTableViewNewReuseIdentitifer = @"New";
 {
     [self.createTextField resignFirstResponder];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)editButtonPressed:(id)sender
+{
+    if (self.editSelected) {
+        self.editBarButton.title = @"Edit";
+        self.editSelected = NO;
+        [self.tableView setEditing:NO animated:YES];
+        
+    }
+    else{
+        self.editBarButton.title = @"Done";
+        self.editSelected = YES;
+        [self.tableView setEditing:YES animated:YES];
+    }
+
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "SDPlaylistTableViewCell.h"
+#import "PlayerManager.h"
 
 @implementation SDPlaylistTableViewCell
 
@@ -22,6 +23,10 @@
 
 -(void)setupDisplayForTrack:(SDTrack *)track;
 {
+    self.longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(onSelfLongPressDetected:)];
+    self.longPressGesture.minimumPressDuration = .8;
+    [self addGestureRecognizer:self.longPressGesture];
+
     self.titleLabel.text = track.titleString;
     self.usernameLabel.text = track.usernameString;
     
@@ -29,7 +34,27 @@
     [self.artworkImageView sd_setImageWithURL:albumArtURLString placeholderImage:nil options:SDWebImageCacheMemoryOnly completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
     }];
+    
+    //If this is the current track being played, make the labels text orange
+    SDTrack *currentTrack= [PlayerManager sharedManager].currentTrack;
+    if ([currentTrack.titleString isEqualToString:track.titleString] && [currentTrack.usernameString isEqualToString:track.usernameString]) {
+        UIColor *orangeColor = [UIColor colorWithRed:0.981 green:0.347 blue:0 alpha:1];
+        self.titleLabel.textColor = orangeColor;
+        self.usernameLabel.textColor = orangeColor;
+    }
+    else
+    {
+        self.titleLabel.textColor = [UIColor blackColor];
+        self.usernameLabel.textColor = [UIColor blackColor];
+    }
+    
+}
 
+-(void)onSelfLongPressDetected:(UILongPressGestureRecognizer *)longPressGestRec
+{
+    if (longPressGestRec.state == UIGestureRecognizerStateBegan) {
+        [self.playlistDelegate longPressOnCell:self];
+    }
 }
 
 @end

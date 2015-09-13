@@ -181,6 +181,11 @@
                                                 <action selector="backBarButtonPressed:" destination="JC6-1G-eQ1" id="Laz-Ed-pRO"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="H7f-9R-aGB">
+                                            <connections>
+                                                <action selector="editButtonPressed:" destination="JC6-1G-eQ1" id="9Ja-6R-USR"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -189,6 +194,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="editBarButton" destination="H7f-9R-aGB" id="bUX-0j-c0q"/>
                         <outlet property="navBar" destination="8j4-c1-dEJ" id="oqr-dM-Cem"/>
                         <outlet property="tableView" destination="Y5l-ct-J9k" id="scU-fK-RCu"/>
                     </connections>

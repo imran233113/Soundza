@@ -8,6 +8,7 @@
 
 #import "SDSearchResultsTableViewCell.h"
 #import "PlaylistManager.h"
+#import "PlayerManager.h"
 
 @implementation SDSearchResultsTableViewCell
 
@@ -24,6 +25,20 @@
     
     self.titleLabel.text = track.titleString;
     self.usernameLabel.text = track.usernameString;
+    
+    //If this is the current track being played, make the labels text orange
+    SDTrack *currentTrack= [PlayerManager sharedManager].currentTrack;
+    if ([currentTrack.titleString isEqualToString:track.titleString] && [currentTrack.usernameString isEqualToString:track.usernameString]) {
+        UIColor *orangeColor = [UIColor colorWithRed:0.981 green:0.347 blue:0 alpha:1];
+        self.titleLabel.textColor = orangeColor;
+        self.usernameLabel.textColor = orangeColor;
+    }
+    else
+    {
+        self.titleLabel.textColor = [UIColor blackColor];
+        self.usernameLabel.textColor = [UIColor blackColor];
+    }
+
     
     
     NSURL *albumArtURLString = [NSURL URLWithString:track.artworkURLString];

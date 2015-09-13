@@ -48,11 +48,17 @@ static NSString *const KTableViewReuseIdentitifer = @"Playlist";
     
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(trackSavedNotification:) name:@"songSaved" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(playerUpdatedNotification:) name:@"updatedPlayer" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(playlistUpdatedNotification:) name:@"playlistUpdated" object:nil];
 
 }
 
 #pragma mark - Notification Center
+
+-(void)playerUpdatedNotification:(NSNotification *)notification
+{
+    [self.tableView reloadData];
+}
 
 -(void)playlistUpdatedNotification:(NSNotification *)notification
 {
@@ -86,6 +92,7 @@ static NSString *const KTableViewReuseIdentitifer = @"Playlist";
 {
     SDPlaylistTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:KTableViewReuseIdentitifer];
     SDTrack *track = self.tracks[indexPath.row];
+    cell.playlistDelegate = self;
     [cell setupDisplayForTrack:track];
     return cell;
 }
@@ -159,6 +166,15 @@ static NSString *const KTableViewReuseIdentitifer = @"Playlist";
         return [NSIndexPath indexPathForRow:0 inSection:1];
     else
         return proposedDestinationIndexPath;
+}
+
+#pragma mark - SDPlaylistCellDelegate
+
+-(void)longPressOnCell:(UITableViewCell *)cell
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    SDTrack *selectedTrack = self.tracks[indexPath.row];
+    [[PlayerManager sharedManager]enqueueTrack:selectedTrack];
 }
 
 #pragma mark - Buttons

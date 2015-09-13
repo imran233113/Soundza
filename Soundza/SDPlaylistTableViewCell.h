@@ -10,10 +10,20 @@
 #import "SDTrack.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
+@protocol SDPlaylistCellDelegate <NSObject>
+@optional
+-(void)longPressOnCell:(UITableViewCell *)cell;
+@end
+
 @interface SDPlaylistTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) id playlistDelegate;
+
 @property (strong, nonatomic) IBOutlet UIImageView *artworkImageView;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
+
+@property (strong, nonatomic) UILongPressGestureRecognizer *longPressGesture;
 
 -(void)setupDisplayForTrack:(SDTrack *)track;
 

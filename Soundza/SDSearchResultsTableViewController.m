@@ -34,11 +34,20 @@ static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
     
      [self.tableView setContentOffset:CGPointMake(0, self.tableView.contentOffset.y-self.refreshControl.frame.size.height) animated:YES];
     [self populateDataSource];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(playerUpdatedNotification:) name:@"updatedPlayer" object:nil];
 }
 
 -(void)refreshControlActivated:(UIRefreshControl *)refreshControl
 {
     [self populateDataSource];
+}
+
+#pragma mark - Notification Center
+
+-(void)playerUpdatedNotification:(NSNotification *)notification
+{
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
