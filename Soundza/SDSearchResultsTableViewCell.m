@@ -7,6 +7,7 @@
 //
 
 #import "SDSearchResultsTableViewCell.h"
+#import "PlaylistManager.h"
 
 @implementation SDSearchResultsTableViewCell
 
@@ -49,7 +50,6 @@
         [self.plusButton setImage:[UIImage imageNamed:@"Plus"] forState:UIControlStateNormal];
         self.plusButton.enabled = YES;
     }
-    
 }
 
 - (IBAction)plusButtonPressed:(id)sender

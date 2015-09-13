@@ -10,6 +10,6 @@
 #import "SDPlaylistTableViewCell.h"
 
 
-@interface SDPlaylistViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface SDPlaylistViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @end

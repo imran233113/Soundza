@@ -26,18 +26,7 @@
     self.usernameLabel.text = track.usernameString;
     
     NSURL *albumArtURLString = [NSURL URLWithString:track.artworkURLString];
-    __weak SDPlaylistTableViewCell *weakSelf = self;
-    
     [self.artworkImageView sd_setImageWithURL:albumArtURLString placeholderImage:nil options:SDWebImageCacheMemoryOnly completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        
-        if (cacheType == SDImageCacheTypeNone) {
-            weakSelf.artworkImageView.alpha = 0;
-            [UIView animateWithDuration:0.2 animations:^{
-                weakSelf.artworkImageView.alpha = 1;
-            }];
-        } else {
-            weakSelf.artworkImageView.alpha = 1;
-        }
         
     }];
 

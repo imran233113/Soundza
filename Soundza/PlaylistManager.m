@@ -26,12 +26,17 @@
     RLMPlaylist *playlist = [[RLMPlaylist alloc]init];
     playlist.title = title;
     playlist.createdAt = [NSDate date];
+    playlist.isCurrent = YES;
+    
     
     RLMRealm *defaultRealm = [RLMRealm defaultRealm];
     [defaultRealm beginWriteTransaction];
     [defaultRealm addObject:playlist];
     [defaultRealm commitWriteTransaction];
-
+    
+    self.playlist = playlist;
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"playlistUpdated" object:nil];
 }
 
 -(void)saveTrack:(SDTrack *)track
@@ -50,6 +55,27 @@
     [defaultRealm commitWriteTransaction];
     
     [[NSNotificationCenter defaultCenter]postNotificationName:@"songSaved" object:nil];
+}
+
+-(void)switchCurrentWithPlaylist:(RLMPlaylist *)playlist;
+{
+    RLMRealm *defaultRealm = [RLMRealm defaultRealm];
+    [defaultRealm beginWriteTransaction];
+    self.playlist.isCurrent = NO;
+    playlist.isCurrent = YES;
+    [defaultRealm commitWriteTransaction];
+    self.playlist = playlist;
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"playlistUpdated" object:nil];
+
+}
+
+-(void)renameCurrentPlaylist:(NSString *)title;
+{
+    RLMRealm *defaultRealm = [RLMRealm defaultRealm];
+    [defaultRealm beginWriteTransaction];
+    self.playlist.title = title;
+    [defaultRealm commitWriteTransaction];
 }
 
 -(void)parseTracks:(RLMArray *)tracks withCompletion:(void(^)(NSArray *parsedTracks))completion;

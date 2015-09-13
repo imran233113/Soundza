@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SDPlaylistsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface SDPlaylistsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @end

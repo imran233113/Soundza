@@ -15,5 +15,6 @@
 @property NSString              *title;
 @property NSDate                *createdAt;
 @property RLMArray <RLMTrack>   *tracks;
+@property BOOL                   isCurrent;
 
 @end

@@ -24,4 +24,7 @@
 -(void)createNewPlaylistWithTitle:(NSString *)title;
 -(void)saveTrack:(SDTrack *)track;
 
+-(void)switchCurrentWithPlaylist:(RLMPlaylist *)playlist;
+-(void)renameCurrentPlaylist:(NSString *)title;
+
 @end

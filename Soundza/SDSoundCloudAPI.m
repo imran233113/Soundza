@@ -9,6 +9,7 @@
 #import "SDSoundCloudAPI.h"
 #import <SCAPI.h>
 #import "SDTrack.h"
+#import "PlaylistManager.h"
 
 NSString *const ClientID = @"40da707152150e8696da429111e3af39";
 
@@ -90,6 +91,17 @@ NSString *const ClientID = @"40da707152150e8696da429111e3af39";
     NSMutableArray *result = [[NSMutableArray alloc]init];
     for (NSDictionary *trk in tracks) {
         SDTrack *track = [[SDTrack alloc]initWithTrack:trk];
+        
+        //check if this track is already saved to the current playlist
+        RLMArray *savedTracks = [PlaylistManager sharedManager].playlist.tracks;
+        for (RLMTrack *t in savedTracks) {
+            if ([track.titleString isEqualToString:t.titleString] && [track.usernameString isEqualToString:t.usernameString])
+            {
+                track.isSaved = YES;
+            }
+        }
+
+        
         [result addObject:track];
     }
     

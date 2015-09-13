@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "RLMPlaylist.h"
 
 @interface SDPlaylistsTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *artworkImageView;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *checkMarkImageView;
 
+-(void)setupDisplayForPlaylist:(RLMPlaylist *)playlist;
 @end

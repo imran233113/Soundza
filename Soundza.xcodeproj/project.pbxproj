@@ -49,6 +49,7 @@
 		1899500B1BA0984700AEA795 /* List@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1899500A1BA0984700AEA795 /* List@2x.png */; };
 		1899500E1BA099CD00AEA795 /* SDPlaylistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899500D1BA099CD00AEA795 /* SDPlaylistsViewController.m */; };
 		189950111BA09CF500AEA795 /* SDPlaylistsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189950101BA09CF500AEA795 /* SDPlaylistsTableViewCell.m */; };
+		189950141BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189950131BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.m */; };
 		B95885B332F1329B4E5B6868 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04449D7A4393601368ECD5E6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +132,8 @@
 		1899500D1BA099CD00AEA795 /* SDPlaylistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPlaylistsViewController.m; sourceTree = "<group>"; };
 		1899500F1BA09CF500AEA795 /* SDPlaylistsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPlaylistsTableViewCell.h; sourceTree = "<group>"; };
 		189950101BA09CF500AEA795 /* SDPlaylistsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPlaylistsTableViewCell.m; sourceTree = "<group>"; };
+		189950121BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCreatePlaylistTableViewCell.h; sourceTree = "<group>"; };
+		189950131BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCreatePlaylistTableViewCell.m; sourceTree = "<group>"; };
 		1AD9D907A69FB546F7B1BAD4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		1F6FDF458636676E0A805C00 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -266,6 +269,8 @@
 				1899500D1BA099CD00AEA795 /* SDPlaylistsViewController.m */,
 				1899500F1BA09CF500AEA795 /* SDPlaylistsTableViewCell.h */,
 				189950101BA09CF500AEA795 /* SDPlaylistsTableViewCell.m */,
+				189950121BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.h */,
+				189950131BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.m */,
 				18994FFC1B9E028000AEA795 /* SDPlaylistTableViewCell.h */,
 				18994FFD1B9E028000AEA795 /* SDPlaylistTableViewCell.m */,
 			);
@@ -508,6 +513,7 @@
 			files = (
 				18994FB51B8F94BC00AEA795 /* SDSoundCloudAPI.m in Sources */,
 				18994FD41B90D36500AEA795 /* SAPageRootViewController.m in Sources */,
+				189950141BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.m in Sources */,
 				18994FEC1B9B729B00AEA795 /* SAActionAlertView.m in Sources */,
 				18994F6F1B8F8A4400AEA795 /* AppDelegate.m in Sources */,
 				189950011B9E0C3300AEA795 /* SDPlaylistViewController.m in Sources */,

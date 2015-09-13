@@ -33,17 +33,31 @@ static NSString *const KTableViewReuseIdentitifer = @"Playlist";
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+
     
     [self.tableView setEditing:YES];
     self.tableView.allowsSelectionDuringEditing = YES;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.RLMTracks = [PlaylistManager sharedManager].playlist.tracks;
+    self.editBarButton.tintColor = [UIColor colorWithRed:0.981 green:0.347 blue:0 alpha:1];
+    self.renameBarButton.tintColor = [UIColor colorWithRed:0.981 green:0.347 blue:0 alpha:1];
+    
     self.navigationItem.title = [PlaylistManager sharedManager].playlist.title;
     
     [self parseTracksReloadTableView];
     
+    
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(trackSavedNotification:) name:@"songSaved" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(playlistUpdatedNotification:) name:@"playlistUpdated" object:nil];
 
+}
+
+#pragma mark - Notification Center
+
+-(void)playlistUpdatedNotification:(NSNotification *)notification
+{
+    [self parseTracksReloadTableView];
+    self.navigationItem.title = [PlaylistManager sharedManager].playlist.title;
 }
 
 -(void)trackSavedNotification:(NSNotification *)notification
@@ -165,6 +179,9 @@ static NSString *const KTableViewReuseIdentitifer = @"Playlist";
 
 - (IBAction)renameBarButtonPressed:(id)sender
 {
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:nil message:@"Enter New Playlist Title" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Done", nil];
+    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alertView show];
     
 }
 
@@ -173,15 +190,34 @@ static NSString *const KTableViewReuseIdentitifer = @"Playlist";
     [self performSegueWithIdentifier:@"toPlaylistsVC" sender:nil];
 }
 
+#pragma mark - Alert View Delegate
+
+-(BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView
+{
+    if ([alertView textFieldAtIndex:0].text.length > 0) {
+        return YES;
+    }
+    else
+        return NO;
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        NSString *newTitle = [alertView textFieldAtIndex:0].text;
+        self.navigationItem.title = newTitle;
+        [[PlaylistManager sharedManager]renameCurrentPlaylist:newTitle];
+    }
+}
+
 #pragma mark - Local Methods
 
 -(void)parseTracksReloadTableView
 {
-    RLMArray *tracks = self.RLMTracks;
-    [[PlaylistManager sharedManager]parseTracks:tracks withCompletion:^(NSArray *parsedTracks) {
+    self.RLMTracks = [PlaylistManager sharedManager].playlist.tracks;
+    [[PlaylistManager sharedManager]parseTracks:self.RLMTracks withCompletion:^(NSArray *parsedTracks) {
         self.tracks = [parsedTracks mutableCopy];
         self.tableView.hidden = !self.tracks.count;
-        self.toolBar.hidden = !self.tracks.count;
         [self.tableView reloadData];
     }];
 
