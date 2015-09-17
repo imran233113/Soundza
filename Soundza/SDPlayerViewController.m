@@ -9,7 +9,7 @@
 #import "SDPlayerViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "SDTrack.h"
-
+#import "PlaylistManager.h"
 
 @interface SDPlayerViewController ()
 @property (strong, nonatomic) IBOutlet UISlider *slider;
@@ -20,11 +20,13 @@
 @property (strong, nonatomic) IBOutlet UIButton *skipButton;
 @property (strong, nonatomic) IBOutlet UIButton *playLastButton;
 @property (strong, nonatomic) IBOutlet UILabel *durationLabel;
+@property (strong, nonatomic) IBOutlet UIButton *saveButton;
 
 - (IBAction)playPauseButtonPressed:(id)sender;
 - (IBAction)skipButtonPressed:(id)sender;
 - (IBAction)playLastButtonPressed:(id)sender;
 - (IBAction)sliding:(id)sender;
+- (IBAction)saveButtonPressed:(id)sender;
 @end
 
 @implementation SDPlayerViewController
@@ -78,7 +80,7 @@
 
 - (IBAction)playLastButtonPressed:(id)sender
 {
-    
+    [[PlayerManager sharedManager]playLastTrackFromPlaylist];
 }
 
 - (IBAction)sliding:(id)sender
@@ -105,6 +107,28 @@
             [player seekToTime:CMTimeMakeWithSeconds(time, NSEC_PER_SEC)];
         }
     }
+}
+
+- (IBAction)saveButtonPressed:(id)sender
+{
+    [UIView animateWithDuration:0.3/1.5 animations:^{
+        self.saveButton.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.2, 1.2);
+        [self.saveButton setImage:[UIImage imageNamed:@"CheckMarkOrange"] forState:UIControlStateNormal];
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.3/2 animations:^{
+            self.saveButton.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.8, 0.8);
+            
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.3/2 animations:^{
+                self.saveButton.transform = CGAffineTransformIdentity;
+            }];
+        }];
+    }];
+    
+    SDTrack *track = [PlayerManager sharedManager].currentTrack;
+    track.isSaved = YES;
+    [[PlaylistManager sharedManager]saveTrack:track];
+
 }
 
 #pragma mark - Priviate Methods
@@ -139,6 +163,16 @@
             self.playLastButton.enabled = YES;
         }
         
+        self.saveButton.hidden = NO;
+        if (track.isSaved) {
+            [self.saveButton setImage:[UIImage imageNamed:@"CheckMarkOrange"] forState:UIControlStateNormal];
+            self.saveButton.enabled = NO;
+        }
+        else{
+            [self.saveButton setImage:[UIImage imageNamed:@"Plus"] forState:UIControlStateNormal];
+            self.saveButton.enabled = YES;
+        }
+
         //Populate the cell with the data recieved from the search.
         self.titleLabel.text = track.titleString;
         self.usernameLabel.text = track.usernameString;
@@ -171,6 +205,7 @@
     self.usernameLabel.text = @"No current song";
     self.durationLabel.text = @"0:00";
     self.albumArtImageView.image = nil;
+    self.saveButton.hidden = YES;
     
     self.durationLabel.alpha = .55;
     self.skipButton.alpha = .55;

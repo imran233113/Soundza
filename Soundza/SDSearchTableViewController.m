@@ -23,6 +23,7 @@ static NSString *const KTableViewReuseIdentitifer = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     self.generes = [SDSoundCloudAPI listOfGenres];
     
     self.searchBar.delegate = self;

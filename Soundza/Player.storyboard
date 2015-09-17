@@ -149,58 +149,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdk-ix-97H">
-                                <rect key="frame" x="143" y="442" width="35" height="35"/>
-                                <state key="normal" image="Play.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" image="Pause.png"/>
-                                <connections>
-                                    <action selector="playPauseButtonPressed:" destination="03q-vB-bay" eventType="touchUpInside" id="vf9-xD-uYt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLI-RR-aAd">
-                                <rect key="frame" x="218" y="447" width="28" height="28"/>
-                                <state key="normal" image="Skip.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="skipButtonPressed:" destination="03q-vB-bay" eventType="touchUpInside" id="AOT-y6-ed4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfC-qK-E8Q">
-                                <rect key="frame" x="75" y="447" width="28" height="28"/>
-                                <state key="normal" image="PlayLast.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="playLastButtonPressed:" destination="03q-vB-bay" eventType="touchUpInside" id="wLP-50-fLo"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DH6-Pe-bbt">
                                 <rect key="frame" x="0.0" y="64" width="320" height="257"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bob Dylan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LtK-fU-GmS">
-                                <rect key="frame" x="28" y="360" width="264" height="21"/>
+                                <rect key="frame" x="28" y="373" width="264" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fPy-cI-lL7">
-                                <rect key="frame" x="42" y="398" width="236" height="31"/>
-                                <color key="minimumTrackTintColor" red="0.45396298170089722" green="0.44113677740097046" blue="0.43172526359558105" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="sliding:" destination="03q-vB-bay" eventType="valueChanged" id="EMg-hC-wBc"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0X-3v-APU">
-                                <rect key="frame" x="279" y="395" width="41" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blowin' In The Wind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHF-pf-fcM" customClass="MarqueeLabel">
-                                <rect key="frame" x="16" y="337" width="288" height="21"/>
+                                <rect key="frame" x="16" y="350" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -226,6 +185,57 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdk-ix-97H">
+                                <rect key="frame" x="143" y="455" width="35" height="35"/>
+                                <state key="normal" image="Play.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="Pause.png"/>
+                                <connections>
+                                    <action selector="playPauseButtonPressed:" destination="03q-vB-bay" eventType="touchUpInside" id="vf9-xD-uYt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLI-RR-aAd">
+                                <rect key="frame" x="218" y="460" width="28" height="28"/>
+                                <state key="normal" image="Skip.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipButtonPressed:" destination="03q-vB-bay" eventType="touchUpInside" id="AOT-y6-ed4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfC-qK-E8Q">
+                                <rect key="frame" x="75" y="460" width="28" height="28"/>
+                                <state key="normal" image="PlayLast.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playLastButtonPressed:" destination="03q-vB-bay" eventType="touchUpInside" id="wLP-50-fLo"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fPy-cI-lL7">
+                                <rect key="frame" x="42" y="411" width="236" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.45396298170089722" green="0.44113677740097046" blue="0.43172526359558105" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="sliding:" destination="03q-vB-bay" eventType="valueChanged" id="EMg-hC-wBc"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0X-3v-APU">
+                                <rect key="frame" x="279" y="408" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.74999999999999978" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZz-vJ-sPe">
+                                <rect key="frame" x="276" y="64" width="44" height="44"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                <state key="normal" image="Plus.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="03q-vB-bay" eventType="touchUpInside" id="rbH-Kh-BnJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -235,6 +245,7 @@
                         <outlet property="durationLabel" destination="O0X-3v-APU" id="02F-eN-Ti3"/>
                         <outlet property="playLastButton" destination="yfC-qK-E8Q" id="uX2-mZ-9bP"/>
                         <outlet property="playPauseButton" destination="vdk-ix-97H" id="vHO-4f-PEg"/>
+                        <outlet property="saveButton" destination="mZz-vJ-sPe" id="Hbs-Fr-mPi"/>
                         <outlet property="skipButton" destination="eLI-RR-aAd" id="lCd-rY-Ekr"/>
                         <outlet property="slider" destination="fPy-cI-lL7" id="EHO-Sb-QT9"/>
                         <outlet property="titleLabel" destination="wHF-pf-fcM" id="w0Z-eP-ehi"/>
@@ -250,6 +261,7 @@
         <image name="Pause.png" width="86" height="120"/>
         <image name="Play.png" width="113" height="110"/>
         <image name="PlayLast.png" width="76" height="68"/>
+        <image name="Plus.png" width="31" height="31"/>
         <image name="Skip.png" width="76" height="68"/>
     </resources>
 </document>

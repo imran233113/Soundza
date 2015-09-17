@@ -50,6 +50,7 @@
 		1899500E1BA099CD00AEA795 /* SDPlaylistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899500D1BA099CD00AEA795 /* SDPlaylistsViewController.m */; };
 		189950111BA09CF500AEA795 /* SDPlaylistsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189950101BA09CF500AEA795 /* SDPlaylistsTableViewCell.m */; };
 		189950141BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189950131BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.m */; };
+		189950161BAA7A3500AEA795 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189950151BAA7A3500AEA795 /* iAd.framework */; };
 		B95885B332F1329B4E5B6868 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04449D7A4393601368ECD5E6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +135,7 @@
 		189950101BA09CF500AEA795 /* SDPlaylistsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPlaylistsTableViewCell.m; sourceTree = "<group>"; };
 		189950121BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCreatePlaylistTableViewCell.h; sourceTree = "<group>"; };
 		189950131BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCreatePlaylistTableViewCell.m; sourceTree = "<group>"; };
+		189950151BAA7A3500AEA795 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		1AD9D907A69FB546F7B1BAD4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		1F6FDF458636676E0A805C00 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				189950161BAA7A3500AEA795 /* iAd.framework in Frameworks */,
 				B95885B332F1329B4E5B6868 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +344,7 @@
 		5ACBFF33AA453EAC325A276E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				189950151BAA7A3500AEA795 /* iAd.framework */,
 				04449D7A4393601368ECD5E6 /* libPods.a */,
 			);
 			name = Frameworks;

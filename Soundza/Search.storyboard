@@ -12,13 +12,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="Search SoundCloud" id="rGl-SF-SLb">
-                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="tintColor" red="0.9438813328742981" green="0.36720648407936096" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="barTintColor" red="0.96229046583175659" green="0.3578396737575531" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="qvl-fh-FO5">
+                            <rect key="frame" x="0.0" y="64" width="320" height="94"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" text="" placeholder="Search SoundCloud" translatesAutoresizingMaskIntoConstraints="NO" id="rGl-SF-SLb">
+                                    <rect key="frame" x="0.0" y="50" width="320" height="44"/>
+                                    <color key="tintColor" red="0.9438813328742981" green="0.36720648407936096" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="barTintColor" red="0.96229046583175659" green="0.3578396737575531" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YHo-AD-Hs2">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                </adBannerView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="jj5-Do-x5D">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -32,8 +41,8 @@
                             <outlet property="delegate" destination="SyY-PZ-Zv3" id="N1U-BC-dbG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Search" id="SvO-o1-A01">
-                        <barButtonItem key="backBarButtonItem" title=" " id="JTa-Hc-aia"/>
+                    <navigationItem key="navigationItem" title="Search" id="Zv5-Nu-QEu">
+                        <barButtonItem key="backBarButtonItem" title=" " id="qJk-ZS-edK"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -53,6 +62,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.99991267919540405" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <adBannerView key="tableHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7RN-vP-tGc">
+                            <rect key="frame" x="0.0" y="64" width="320" height="50"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        </adBannerView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Results" rowHeight="70" id="imV-LH-wrz" customClass="SDSearchResultsTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>

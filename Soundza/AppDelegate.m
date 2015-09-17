@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
 #import "PlaylistManager.h"
+#import "PlayerManager.h"
 
 @interface AppDelegate ()
 
@@ -30,6 +31,11 @@
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self becomeFirstResponder];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(interruption:)
+                                                 name:AVAudioSessionInterruptionNotification
+                                               object:nil];
+    
     //set the player page index to the first.
     NSNumber *one = [NSNumber numberWithInt:0];
     [[NSUserDefaults standardUserDefaults] setObject:one forKey:@"pageIndex"];
@@ -50,6 +56,67 @@
     [PlaylistManager sharedManager].playlist = (RLMPlaylist *)firstPlaylist;
     
     return YES;
+}
+
+-(BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+-(void)remoteControlReceivedWithEvent:(UIEvent *)event
+{
+    if (event.type == UIEventTypeRemoteControl) {
+        
+        if (event.type == UIEventTypeRemoteControl)
+        {
+            if (event.subtype == UIEventSubtypeRemoteControlPlay)
+            {
+                [[PlayerManager sharedManager]togglePlayPause:nil];
+            }
+            else if (event.subtype == UIEventSubtypeRemoteControlPause)
+            {
+                [[PlayerManager sharedManager]togglePlayPause:nil];
+            }
+            else if (event.subtype == UIEventSubtypeRemoteControlNextTrack)
+            {
+                [[PlayerManager sharedManager]playNext];
+            }
+            else if (event.subtype == UIEventSubtypeRemoteControlPreviousTrack){
+                
+                if ([PlayerManager sharedManager].playingFromPlaylist) {
+                   [[PlayerManager sharedManager]playLastTrackFromPlaylist];
+                }
+            }
+        }
+    }
+}
+
+#pragma mark - NSNotification Center 
+
+-(void)interruption:(NSNotification *)note;
+{
+    NSDictionary *interuptionDict = note.userInfo;
+    // get the AVAudioSessionInterruptionTypeKey enum from the dictionary
+    NSInteger interuptionType = [[interuptionDict valueForKey:AVAudioSessionInterruptionTypeKey] integerValue];
+    // decide what to do based on interruption type here...
+    switch (interuptionType) {
+        case AVAudioSessionInterruptionTypeBegan:
+            NSLog(@"Audio Session Interruption case started.");
+            
+            [[PlayerManager sharedManager]togglePlayPause:nil];
+            
+            break;
+            
+        case AVAudioSessionInterruptionTypeEnded:
+            NSLog(@"Audio Session Interruption case ended.");
+            // fork to handling method here...
+            // EG:[self handleInterruptionEnded];
+            break;
+            
+        default:
+            NSLog(@"Audio Session Interruption Notification case default.");
+            break;
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

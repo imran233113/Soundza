@@ -36,6 +36,7 @@ static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
     [self populateDataSource];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(playerUpdatedNotification:) name:@"updatedPlayer" object:nil];
+    
 }
 
 -(void)refreshControlActivated:(UIRefreshControl *)refreshControl
@@ -52,10 +53,6 @@ static NSString *const KSearchResultsTableViewCellReuseID = @"Results";
 
 #pragma mark - Table view data source
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return @" ";
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
