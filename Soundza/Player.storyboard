@@ -236,6 +236,20 @@
                                     <action selector="saveButtonPressed:" destination="03q-vB-bay" eventType="touchUpInside" id="rbH-Kh-BnJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAf-S8-d6c">
+                                <rect key="frame" x="9" y="452" width="44" height="44"/>
+                                <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                <state key="normal" image="ReplaySong.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPo-nq-vmr">
+                                <rect key="frame" x="267" y="452" width="44" height="44"/>
+                                <inset key="contentEdgeInsets" minX="12" minY="13" maxX="12" maxY="13"/>
+                                <state key="normal" image="ShufflePlay2.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -262,6 +276,8 @@
         <image name="Play.png" width="113" height="110"/>
         <image name="PlayLast.png" width="76" height="68"/>
         <image name="Plus.png" width="31" height="31"/>
+        <image name="ReplaySong.png" width="30" height="31"/>
+        <image name="ShufflePlay2.png" width="30" height="24"/>
         <image name="Skip.png" width="76" height="68"/>
     </resources>
 </document>

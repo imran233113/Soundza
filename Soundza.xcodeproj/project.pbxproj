@@ -51,6 +51,8 @@
 		189950111BA09CF500AEA795 /* SDPlaylistsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189950101BA09CF500AEA795 /* SDPlaylistsTableViewCell.m */; };
 		189950141BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189950131BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.m */; };
 		189950161BAA7A3500AEA795 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189950151BAA7A3500AEA795 /* iAd.framework */; };
+		189950191BAA861C00AEA795 /* ReplaySong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 189950171BAA861C00AEA795 /* ReplaySong@2x.png */; };
+		1899501C1BAA889200AEA795 /* ShufflePlay2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1899501B1BAA889200AEA795 /* ShufflePlay2@2x.png */; };
 		B95885B332F1329B4E5B6868 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04449D7A4393601368ECD5E6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +138,8 @@
 		189950121BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCreatePlaylistTableViewCell.h; sourceTree = "<group>"; };
 		189950131BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCreatePlaylistTableViewCell.m; sourceTree = "<group>"; };
 		189950151BAA7A3500AEA795 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		189950171BAA861C00AEA795 /* ReplaySong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ReplaySong@2x.png"; sourceTree = "<group>"; };
+		1899501B1BAA889200AEA795 /* ShufflePlay2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShufflePlay2@2x.png"; sourceTree = "<group>"; };
 		1AD9D907A69FB546F7B1BAD4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		1F6FDF458636676E0A805C00 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -326,6 +330,8 @@
 		18994FE01B90F93300AEA795 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				1899501B1BAA889200AEA795 /* ShufflePlay2@2x.png */,
+				189950171BAA861C00AEA795 /* ReplaySong@2x.png */,
 				1899500A1BA0984700AEA795 /* List@2x.png */,
 				18994FF11B9CAB3F00AEA795 /* Plus@2x.png */,
 				18994FED1B9CA8D000AEA795 /* CheckMarkOrange@2x.png */,
@@ -455,7 +461,9 @@
 				18994FCF1B90CEBE00AEA795 /* SliderHandle@2x.png in Resources */,
 				18994FCA1B90C6EC00AEA795 /* Play@2x.png in Resources */,
 				18994FE91B9B71D200AEA795 /* CheckMark@2x.png in Resources */,
+				1899501C1BAA889200AEA795 /* ShufflePlay2@2x.png in Resources */,
 				18994FB21B8F90E600AEA795 /* StreamBlack@2x.png in Resources */,
+				189950191BAA861C00AEA795 /* ReplaySong@2x.png in Resources */,
 				18994FA91B8F8F5D00AEA795 /* Playlists@2x.png in Resources */,
 				18994F951B8F8D2000AEA795 /* Search.storyboard in Resources */,
 				18994FAA1B8F8F5D00AEA795 /* Search@2x.png in Resources */,
