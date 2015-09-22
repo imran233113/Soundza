@@ -52,7 +52,7 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     
-    RLMResults *firstPlaylist = [[RLMPlaylist objectsWhere:@"isCurrent = YES"]firstObject];
+    RLMPlaylist *firstPlaylist = [[RLMPlaylist objectsWhere:@"isCurrent = YES"]firstObject];
     [PlaylistManager sharedManager].playlist = (RLMPlaylist *)firstPlaylist;
     
     return YES;

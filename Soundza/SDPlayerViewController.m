@@ -21,12 +21,16 @@
 @property (strong, nonatomic) IBOutlet UIButton *playLastButton;
 @property (strong, nonatomic) IBOutlet UILabel *durationLabel;
 @property (strong, nonatomic) IBOutlet UIButton *saveButton;
+@property (strong, nonatomic) IBOutlet UIButton *replayButton;
+@property (strong, nonatomic) IBOutlet UIButton *shuffleButton;
 
 - (IBAction)playPauseButtonPressed:(id)sender;
 - (IBAction)skipButtonPressed:(id)sender;
 - (IBAction)playLastButtonPressed:(id)sender;
 - (IBAction)sliding:(id)sender;
 - (IBAction)saveButtonPressed:(id)sender;
+- (IBAction)replayButtonPressed:(id)sender;
+- (IBAction)shuffleButtonPressed:(id)sender;
 @end
 
 @implementation SDPlayerViewController
@@ -35,6 +39,9 @@
     [super viewDidLoad];
     
     [PlayerManager sharedManager].delegate = self;
+    
+    [self.replayButton setSelected:[PlayerManager sharedManager].replayIsOn];
+    [self.shuffleButton setSelected:[PlayerManager sharedManager].shuffleIsOn];
     
     [self.slider setThumbImage:[UIImage imageNamed:@"SliderHandle"] forState:UIControlStateNormal];
     
@@ -129,6 +136,18 @@
     track.isSaved = YES;
     [[PlaylistManager sharedManager]saveTrack:track];
 
+}
+
+- (IBAction)replayButtonPressed:(id)sender
+{
+    [self.replayButton setSelected:!self.replayButton.isSelected];
+    [PlayerManager sharedManager].replayIsOn = self.replayButton.isSelected;
+}
+
+- (IBAction)shuffleButtonPressed:(id)sender
+{
+    [self.shuffleButton setSelected:!self.shuffleButton.isSelected];
+    [PlayerManager sharedManager].shuffleIsOn = self.shuffleButton.isSelected;
 }
 
 #pragma mark - Priviate Methods

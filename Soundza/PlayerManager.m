@@ -143,8 +143,11 @@
     
     [[NSNotificationCenter defaultCenter]removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:self.player.currentItem];
     
-    if (self.queue.count) {
-        [[PlayerManager sharedManager] playNextInQueue];
+    if(self.replayIsOn){
+        [self playTrack:self.currentTrack];
+    }
+    else if (self.queue.count) {
+        [self playNextInQueue];
     }
     else {
         if (self.playingFromPlaylist) {
@@ -225,6 +228,7 @@
     [[NSNotificationCenter defaultCenter]postNotificationName:@"updatedPlayer" object:nil];
 
 }
+
 
 
 -(void)enqueueTrack:(SDTrack *)track;

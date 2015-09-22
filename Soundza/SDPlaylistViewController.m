@@ -195,10 +195,45 @@ static NSString *const KTableViewReuseIdentitifer = @"Playlist";
 
 - (IBAction)renameBarButtonPressed:(id)sender
 {
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:nil message:@"Enter New Playlist Title" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Done", nil];
-    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alertView show];
     
+    //Create an alert controller for renaming the playlist, bunch of bull
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:nil
+                                          message:@"Enter New Playlist Title"
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
+     {
+         [textField addTarget:self
+                       action:@selector(alertTextFieldDidChange:)
+             forControlEvents:UIControlEventEditingChanged];
+     }];
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:@"Cancel"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       UITextField *textField = alertController.textFields.firstObject;
+                                       [textField resignFirstResponder];
+                                   }];
+    UIAlertAction *doneAction = [UIAlertAction
+                                 actionWithTitle:@"Done"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction *action)
+                                 {
+                                     UITextField *textField = alertController.textFields.firstObject;
+                                     NSString *newTitle = textField.text;
+                                     self.navigationItem.title = newTitle;
+                                     [[PlaylistManager sharedManager]renameCurrentPlaylist:newTitle];
+                                     [textField resignFirstResponder];
+                                     
+                                 }];
+    doneAction.enabled = NO;
+    [alertController addAction:cancelAction];
+    [alertController addAction:doneAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+
 }
 
 - (IBAction)playlistNavButtonPressed:(id)sender
@@ -206,15 +241,18 @@ static NSString *const KTableViewReuseIdentitifer = @"Playlist";
     [self performSegueWithIdentifier:@"toPlaylistsVC" sender:nil];
 }
 
-#pragma mark - Alert View Delegate
+#pragma mark - Alert Controller
 
--(BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView
+-(void)alertTextFieldDidChange:(UITextField *)textField
 {
-    if ([alertView textFieldAtIndex:0].text.length > 0) {
-        return YES;
+    
+    UIAlertController *alertController = (UIAlertController *)self.presentedViewController;
+    if (alertController)
+    {
+        UITextField *textField = alertController.textFields.firstObject;
+        UIAlertAction *doneAction = alertController.actions.lastObject;
+        doneAction.enabled = textField.text.length > 0;
     }
-    else
-        return NO;
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

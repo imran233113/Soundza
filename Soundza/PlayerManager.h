@@ -29,6 +29,9 @@
 @property (nonatomic) int currentPlaylistIndex;
 @property (strong, nonatomic) NSString *playlistName;
 
+@property (assign ,nonatomic) BOOL replayIsOn;
+@property (assign, nonatomic) BOOL shuffleIsOn;
+
 @property (nonatomic) int currentSearchIndex;
 
 @property (strong, nonatomic) NSMutableDictionary *dicForInfoCenter;

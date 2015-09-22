@@ -98,7 +98,6 @@
     [self.view addSubview:border];
     [self.view bringSubviewToFront:border];
     
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -106,8 +105,6 @@
     //save the last index to load for later
     [[NSUserDefaults standardUserDefaults] setObject:self.index forKey:@"pageIndex"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
     
     [super viewWillDisappear:animated];
 }
