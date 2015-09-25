@@ -36,7 +36,8 @@
     else
     {
         self.titleLabel.textColor = [UIColor blackColor];
-        self.usernameLabel.textColor = [UIColor blackColor];
+        //gray
+        self.usernameLabel.textColor = [UIColor colorWithRed:0.568 green:0.567 blue:0.567 alpha:1];
     }
 
     

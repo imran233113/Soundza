@@ -32,6 +32,7 @@
 @property (assign ,nonatomic) BOOL replayIsOn;
 @property (assign, nonatomic) BOOL shuffleIsOn;
 
+
 @property (nonatomic) int currentSearchIndex;
 
 @property (strong, nonatomic) NSMutableDictionary *dicForInfoCenter;
@@ -46,6 +47,8 @@
 -(void)playLastTrackFromPlaylist;
 -(void)playNextTrackFromPlaylist;
 -(void)clearPlayer;
+
+-(void)updateShuffleIfNeeded;
 
 -(void)playNext;
 -(void)playNextInQueue;

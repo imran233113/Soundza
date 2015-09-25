@@ -18,6 +18,9 @@
 {
     BOOL _playingFromPlaylist;
     int _playlistIndex;
+    
+    NSMutableArray * _shuffledArray;
+    int currentShufIndex;
 }
 
 +(PlayerManager *)sharedManager {
@@ -151,7 +154,12 @@
     }
     else {
         if (self.playingFromPlaylist) {
-            [self playNextTrackFromPlaylist];
+            
+            if (self.shuffleIsOn) {
+                [self playNextSongShuffled];
+            }
+            else
+                [self playNextTrackFromPlaylist];
         }
         else{
             [self clearPlayer];
@@ -191,6 +199,8 @@
     self.currentTrack = track;
     [self playTrack:track];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"updatedPlayer" object:nil];
+    
+    [self updateShuffleIfNeeded];
 }
 
 -(void)playNextTrackFromPlaylist
@@ -213,11 +223,24 @@
 
 -(void)playLastTrackFromPlaylist;
 {
+    if (self.shuffleIsOn){
+        //play last shuffled song
+        if (currentShufIndex > 0) {
+            NSNumber *shuffledIndex = _shuffledArray[currentShufIndex-1];
+            int i = [shuffledIndex intValue];
+            SDTrack *track = self.playlist[i];
+            [self playTrack:track];
+            self.currentTrack = track;
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"updatedPlayer" object:nil];
+        }
+    }
+    else{
     self.currentPlaylistIndex--;
     SDTrack *lastTrack = self.playlist[self.currentPlaylistIndex];
     self.currentTrack = lastTrack;
     [self playTrack:self.currentTrack];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"updatedPlayer" object:nil];
+    }
 }
 
 -(void)playNextInQueue
@@ -226,10 +249,58 @@
     [self.queue removeObjectAtIndex:0];
     [self playTrack:self.currentTrack];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"updatedPlayer" object:nil];
-
 }
 
+-(void)playNextSongShuffled
+{
+    NSNumber *shuffledIndex = _shuffledArray[currentShufIndex];
+    int i = [shuffledIndex intValue];
+    SDTrack *track = self.playlist[i];
+    [self playTrack:track];
+    
+    self.currentTrack = track;
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"updatedPlayer" object:nil];
 
+    //update the shuffled index
+    if (currentShufIndex < self.playlist.count-1)
+        currentShufIndex++;
+    else
+        currentShufIndex = 0;
+}
+
+-(void)updateShuffleIfNeeded
+{
+    if (self.shuffleIsOn) {
+        [self shufflePlaylistIndexes];
+    }
+    else{
+        if (_shuffledArray.count) {
+            [_shuffledArray removeAllObjects];
+        }
+    }
+}
+
+-(void)shufflePlaylistIndexes
+{
+    if (self.playlist) {
+        
+        _shuffledArray = [[NSMutableArray alloc]initWithCapacity:self.playlist.count];
+        for (int x = 0; x<self.playlist.count; x++)
+        {
+            NSNumber *i = [NSNumber numberWithInt:x];
+            [_shuffledArray addObject:i];
+        }
+        
+        //shuffle the array
+        NSUInteger count = [_shuffledArray count];
+        for (NSUInteger i = 0; i < count - 1; ++i) {
+            NSInteger remainingCount = count - i;
+            NSInteger exchangeIndex = i + arc4random_uniform((u_int32_t )remainingCount);
+            [_shuffledArray exchangeObjectAtIndex:i withObjectAtIndex:exchangeIndex];
+        }
+        currentShufIndex = 0;
+    }
+}
 
 -(void)enqueueTrack:(SDTrack *)track;
 {

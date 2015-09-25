@@ -148,6 +148,7 @@
 {
     [self.shuffleButton setSelected:!self.shuffleButton.isSelected];
     [PlayerManager sharedManager].shuffleIsOn = self.shuffleButton.isSelected;
+    [[PlayerManager sharedManager]updateShuffleIfNeeded];
 }
 
 #pragma mark - Priviate Methods
@@ -221,7 +222,7 @@
 -(void)setDisplayForNoCurrentTrack
 {
     self.titleLabel.text = @"";
-    self.usernameLabel.text = @"No current song";
+    self.usernameLabel.text = @"";
     self.durationLabel.text = @"0:00";
     self.albumArtImageView.image = nil;
     self.saveButton.hidden = YES;

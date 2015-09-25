@@ -73,6 +73,7 @@ static NSString *const KTableViewReuseIdentitifer = @"Playlist";
     //If the user is playing from the playlist and has updated the playist, make sure to reasign the tracks so they are updated
     if ([PlayerManager sharedManager].playingFromPlaylist) {
         [PlayerManager sharedManager].playlist = self.tracks;
+        [[PlayerManager sharedManager]updateShuffleIfNeeded];
     }
 }
 

@@ -30,9 +30,8 @@
     RLMTrack *firstTrack = playlist.tracks.firstObject;
     NSString *artworkURLString = firstTrack.artworkURLString;
     NSURL *artworkURL = [NSURL URLWithString:artworkURLString];
-    [self.artworkImageView sd_setImageWithURL:artworkURL placeholderImage:nil options:SDWebImageCacheMemoryOnly completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                
-    }];
+    
+    [self.artworkImageView sd_setImageWithURL:artworkURL];
     
     self.checkMarkImageView.hidden = ![playlist isEqualToObject:[PlaylistManager sharedManager].playlist];
 

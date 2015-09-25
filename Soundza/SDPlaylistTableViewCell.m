@@ -30,10 +30,9 @@
     self.titleLabel.text = track.titleString;
     self.usernameLabel.text = track.usernameString;
     
-    NSURL *albumArtURLString = [NSURL URLWithString:track.artworkURLString];
-    [self.artworkImageView sd_setImageWithURL:albumArtURLString placeholderImage:nil options:SDWebImageCacheMemoryOnly completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        
-    }];
+    NSURL *albumArtURL = [NSURL URLWithString:track.artworkURLString];
+    [self.artworkImageView sd_setImageWithURL:albumArtURL];
+    
     
     //If this is the current track being played, make the labels text orange
     SDTrack *currentTrack= [PlayerManager sharedManager].currentTrack;
@@ -45,7 +44,7 @@
     else
     {
         self.titleLabel.textColor = [UIColor blackColor];
-        self.usernameLabel.textColor = [UIColor blackColor];
+        self.usernameLabel.textColor = [UIColor colorWithRed:0.568 green:0.567 blue:0.567 alpha:1];
     }
     
 }
