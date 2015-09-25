@@ -31,7 +31,11 @@
     NSString *artworkURLString = firstTrack.artworkURLString;
     NSURL *artworkURL = [NSURL URLWithString:artworkURLString];
     
-    [self.artworkImageView sd_setImageWithURL:artworkURL];
+    [self.artworkImageView sd_setImageWithURL:artworkURL placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if (!image) {
+            [self.artworkImageView setImage:[UIImage imageNamed:@"PlaylistsAsset"]];
+        }
+    }];
     
     self.checkMarkImageView.hidden = ![playlist isEqualToObject:[PlaylistManager sharedManager].playlist];
 
