@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1817FDE81BB6528500EBA100 /* no-album-art.png in Resources */ = {isa = PBXBuildFile; fileRef = 1817FDE71BB6528500EBA100 /* no-album-art.png */; settings = {ASSET_TAGS = (); }; };
 		186BA19A1BB0E7ED00F82600 /* ReplaySongSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 186BA1981BB0E7ED00F82600 /* ReplaySongSelected@2x.png */; settings = {ASSET_TAGS = (); }; };
 		186BA19B1BB0E7ED00F82600 /* ShufflePlaySelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 186BA1991BB0E7ED00F82600 /* ShufflePlaySelected@2x.png */; settings = {ASSET_TAGS = (); }; };
 		18994F6C1B8F8A4400AEA795 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994F6B1B8F8A4400AEA795 /* main.m */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		04449D7A4393601368ECD5E6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1817FDE71BB6528500EBA100 /* no-album-art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-album-art.png"; sourceTree = "<group>"; };
 		186BA1981BB0E7ED00F82600 /* ReplaySongSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ReplaySongSelected@2x.png"; sourceTree = "<group>"; };
 		186BA1991BB0E7ED00F82600 /* ShufflePlaySelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShufflePlaySelected@2x.png"; sourceTree = "<group>"; };
 		18994F661B8F8A4400AEA795 /* Soundza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundza.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -336,6 +338,7 @@
 		18994FE01B90F93300AEA795 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				1817FDE71BB6528500EBA100 /* no-album-art.png */,
 				18E2BB4B1BB5FBEF00366016 /* PlaylistsAsset@2x.png */,
 				186BA1981BB0E7ED00F82600 /* ReplaySongSelected@2x.png */,
 				186BA1991BB0E7ED00F82600 /* ShufflePlaySelected@2x.png */,
@@ -483,6 +486,7 @@
 				18994F9B1B8F8D6300AEA795 /* Playlist.storyboard in Resources */,
 				18994FF21B9CAB3F00AEA795 /* Plus@2x.png in Resources */,
 				18994FCD1B90C6F500AEA795 /* Skip@2x.png in Resources */,
+				1817FDE81BB6528500EBA100 /* no-album-art.png in Resources */,
 				18994FCB1B90C6EC00AEA795 /* PlayLast@2x.png in Resources */,
 				18994F771B8F8A4400AEA795 /* Images.xcassets in Resources */,
 			);
