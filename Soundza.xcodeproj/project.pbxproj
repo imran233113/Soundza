@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1817FDE81BB6528500EBA100 /* no-album-art.png in Resources */ = {isa = PBXBuildFile; fileRef = 1817FDE71BB6528500EBA100 /* no-album-art.png */; settings = {ASSET_TAGS = (); }; };
-		186BA19A1BB0E7ED00F82600 /* ReplaySongSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 186BA1981BB0E7ED00F82600 /* ReplaySongSelected@2x.png */; settings = {ASSET_TAGS = (); }; };
-		186BA19B1BB0E7ED00F82600 /* ShufflePlaySelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 186BA1991BB0E7ED00F82600 /* ShufflePlaySelected@2x.png */; settings = {ASSET_TAGS = (); }; };
+		1817FDE81BB6528500EBA100 /* no-album-art.png in Resources */ = {isa = PBXBuildFile; fileRef = 1817FDE71BB6528500EBA100 /* no-album-art.png */; };
+		1817FEA51BB7975F00EBA100 /* NoArtworkOrange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1817FEA41BB7975F00EBA100 /* NoArtworkOrange@2x.png */; };
+		1842C2BD1BE710580001033D /* breadpilot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1842C2BC1BE710580001033D /* breadpilot.jpg */; };
+		186BA19A1BB0E7ED00F82600 /* ReplaySongSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 186BA1981BB0E7ED00F82600 /* ReplaySongSelected@2x.png */; };
+		186BA19B1BB0E7ED00F82600 /* ShufflePlaySelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 186BA1991BB0E7ED00F82600 /* ShufflePlaySelected@2x.png */; };
 		18994F6C1B8F8A4400AEA795 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994F6B1B8F8A4400AEA795 /* main.m */; };
 		18994F6F1B8F8A4400AEA795 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18994F6E1B8F8A4400AEA795 /* AppDelegate.m */; };
 		18994F751B8F8A4400AEA795 /* Tab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18994F731B8F8A4400AEA795 /* Tab.storyboard */; };
@@ -56,7 +58,7 @@
 		189950161BAA7A3500AEA795 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189950151BAA7A3500AEA795 /* iAd.framework */; };
 		189950191BAA861C00AEA795 /* ReplaySong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 189950171BAA861C00AEA795 /* ReplaySong@2x.png */; };
 		1899501C1BAA889200AEA795 /* ShufflePlay2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1899501B1BAA889200AEA795 /* ShufflePlay2@2x.png */; };
-		18E2BB4C1BB5FBEF00366016 /* PlaylistsAsset@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E2BB4B1BB5FBEF00366016 /* PlaylistsAsset@2x.png */; settings = {ASSET_TAGS = (); }; };
+		18E2BB4C1BB5FBEF00366016 /* PlaylistsAsset@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E2BB4B1BB5FBEF00366016 /* PlaylistsAsset@2x.png */; };
 		B95885B332F1329B4E5B6868 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04449D7A4393601368ECD5E6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 /* Begin PBXFileReference section */
 		04449D7A4393601368ECD5E6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1817FDE71BB6528500EBA100 /* no-album-art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-album-art.png"; sourceTree = "<group>"; };
+		1817FEA41BB7975F00EBA100 /* NoArtworkOrange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NoArtworkOrange@2x.png"; sourceTree = "<group>"; };
+		1842C2BC1BE710580001033D /* breadpilot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = breadpilot.jpg; sourceTree = "<group>"; };
 		186BA1981BB0E7ED00F82600 /* ReplaySongSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ReplaySongSelected@2x.png"; sourceTree = "<group>"; };
 		186BA1991BB0E7ED00F82600 /* ShufflePlaySelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShufflePlaySelected@2x.png"; sourceTree = "<group>"; };
 		18994F661B8F8A4400AEA795 /* Soundza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundza.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,11 +179,11 @@
 		18994F5D1B8F8A4400AEA795 = {
 			isa = PBXGroup;
 			children = (
+				5ACBFF33AA453EAC325A276E /* Frameworks */,
+				893EF6120B4358B7031FCA2C /* Pods */,
+				18994F671B8F8A4400AEA795 /* Products */,
 				18994F681B8F8A4400AEA795 /* Soundza */,
 				18994F821B8F8A4400AEA795 /* SoundzaTests */,
-				18994F671B8F8A4400AEA795 /* Products */,
-				893EF6120B4358B7031FCA2C /* Pods */,
-				5ACBFF33AA453EAC325A276E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,15 +199,15 @@
 		18994F681B8F8A4400AEA795 /* Soundza */ = {
 			isa = PBXGroup;
 			children = (
+				18994FC51B8FA54100AEA795 /* Models */,
 				18994FB01B8F8FDF00AEA795 /* Player Controllers */,
 				18994FA01B8F8DBB00AEA795 /* Playlist Controllers */,
 				18994F991B8F8D4700AEA795 /* Search Controllers */,
+				18994F691B8F8A4400AEA795 /* Supporting Files */,
 				18994F931B8F8CB200AEA795 /* Tab Controllers */,
-				18994FC51B8FA54100AEA795 /* Models */,
 				18994F8F1B8F8BE400AEA795 /* Utilities */,
 				18994F761B8F8A4400AEA795 /* Images.xcassets */,
 				18994F781B8F8A4400AEA795 /* LaunchScreen.xib */,
-				18994F691B8F8A4400AEA795 /* Supporting Files */,
 			);
 			path = Soundza;
 			sourceTree = "<group>";
@@ -214,14 +218,14 @@
 				18994F6A1B8F8A4400AEA795 /* Info.plist */,
 				18994F6B1B8F8A4400AEA795 /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		18994F821B8F8A4400AEA795 /* SoundzaTests */ = {
 			isa = PBXGroup;
 			children = (
-				18994F851B8F8A4400AEA795 /* SoundzaTests.m */,
 				18994F831B8F8A4400AEA795 /* Supporting Files */,
+				18994F851B8F8A4400AEA795 /* SoundzaTests.m */,
 			);
 			path = SoundzaTests;
 			sourceTree = "<group>";
@@ -231,80 +235,80 @@
 			children = (
 				18994F841B8F8A4400AEA795 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		18994F8F1B8F8BE400AEA795 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				18994FB31B8F94BC00AEA795 /* SDSoundCloudAPI.h */,
-				18994FB41B8F94BC00AEA795 /* SDSoundCloudAPI.m */,
-				18994FCE1B90CEBE00AEA795 /* SliderHandle@2x.png */,
 				18994FE01B90F93300AEA795 /* Assets */,
 				18994F6D1B8F8A4400AEA795 /* AppDelegate.h */,
 				18994F6E1B8F8A4400AEA795 /* AppDelegate.m */,
+				18994FB31B8F94BC00AEA795 /* SDSoundCloudAPI.h */,
+				18994FB41B8F94BC00AEA795 /* SDSoundCloudAPI.m */,
+				18994FCE1B90CEBE00AEA795 /* SliderHandle@2x.png */,
 			);
-			name = Utilities;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		18994F931B8F8CB200AEA795 /* Tab Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				18994F731B8F8A4400AEA795 /* Tab.storyboard */,
-				18994F901B8F8C6300AEA795 /* SDTabBarViewController.h */,
-				18994F911B8F8C6300AEA795 /* SDTabBarViewController.m */,
 				18994FE61B9B71AA00AEA795 /* ActionAlertView.xib */,
 				18994FEA1B9B729B00AEA795 /* SAActionAlertView.h */,
 				18994FEB1B9B729B00AEA795 /* SAActionAlertView.m */,
+				18994F901B8F8C6300AEA795 /* SDTabBarViewController.h */,
+				18994F911B8F8C6300AEA795 /* SDTabBarViewController.m */,
+				18994F731B8F8A4400AEA795 /* Tab.storyboard */,
 			);
-			name = "Tab Controllers";
+			path = "Tab Controllers";
 			sourceTree = "<group>";
 		};
 		18994F991B8F8D4700AEA795 /* Search Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				18994F941B8F8D2000AEA795 /* Search.storyboard */,
-				18994FA41B8F8E1800AEA795 /* SDSearchTableViewController.h */,
-				18994FA51B8F8E1800AEA795 /* SDSearchTableViewController.m */,
-				18994FBC1B8F993F00AEA795 /* SDSearchResultsTableViewController.h */,
-				18994FBD1B8F993F00AEA795 /* SDSearchResultsTableViewController.m */,
 				18994FBF1B8F99EA00AEA795 /* SDSearchResultsTableViewCell.h */,
 				18994FC01B8F99EA00AEA795 /* SDSearchResultsTableViewCell.m */,
+				18994FBC1B8F993F00AEA795 /* SDSearchResultsTableViewController.h */,
+				18994FBD1B8F993F00AEA795 /* SDSearchResultsTableViewController.m */,
+				18994FA41B8F8E1800AEA795 /* SDSearchTableViewController.h */,
+				18994FA51B8F8E1800AEA795 /* SDSearchTableViewController.m */,
+				18994F941B8F8D2000AEA795 /* Search.storyboard */,
 			);
-			name = "Search Controllers";
+			path = "Search Controllers";
 			sourceTree = "<group>";
 		};
 		18994FA01B8F8DBB00AEA795 /* Playlist Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				18994F9A1B8F8D6300AEA795 /* Playlist.storyboard */,
-				18994FFF1B9E0C3300AEA795 /* SDPlaylistViewController.h */,
-				189950001B9E0C3300AEA795 /* SDPlaylistViewController.m */,
-				1899500C1BA099CD00AEA795 /* SDPlaylistsViewController.h */,
-				1899500D1BA099CD00AEA795 /* SDPlaylistsViewController.m */,
-				1899500F1BA09CF500AEA795 /* SDPlaylistsTableViewCell.h */,
-				189950101BA09CF500AEA795 /* SDPlaylistsTableViewCell.m */,
 				189950121BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.h */,
 				189950131BA4FFEE00AEA795 /* SDCreatePlaylistTableViewCell.m */,
 				18994FFC1B9E028000AEA795 /* SDPlaylistTableViewCell.h */,
 				18994FFD1B9E028000AEA795 /* SDPlaylistTableViewCell.m */,
+				18994FFF1B9E0C3300AEA795 /* SDPlaylistViewController.h */,
+				189950001B9E0C3300AEA795 /* SDPlaylistViewController.m */,
+				1899500F1BA09CF500AEA795 /* SDPlaylistsTableViewCell.h */,
+				189950101BA09CF500AEA795 /* SDPlaylistsTableViewCell.m */,
+				1899500C1BA099CD00AEA795 /* SDPlaylistsViewController.h */,
+				1899500D1BA099CD00AEA795 /* SDPlaylistsViewController.m */,
 			);
-			name = "Playlist Controllers";
+			path = "Playlist Controllers";
 			sourceTree = "<group>";
 		};
 		18994FB01B8F8FDF00AEA795 /* Player Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				18994FAB1B8F8FC300AEA795 /* Player.storyboard */,
 				18994FD61B90D45B00AEA795 /* Page Controllers */,
+				18994FAB1B8F8FC300AEA795 /* Player.storyboard */,
 				18994FAD1B8F8FDB00AEA795 /* SDPlayerViewController.h */,
 				18994FAE1B8F8FDB00AEA795 /* SDPlayerViewController.m */,
-				18994FDA1B90D74500AEA795 /* SDQueueViewController.h */,
-				18994FDB1B90D74500AEA795 /* SDQueueViewController.m */,
 				18994FE31B9B683300AEA795 /* SDQueueTableViewCell.h */,
 				18994FE41B9B683300AEA795 /* SDQueueTableViewCell.m */,
+				18994FDA1B90D74500AEA795 /* SDQueueViewController.h */,
+				18994FDB1B90D74500AEA795 /* SDQueueViewController.m */,
 			);
-			name = "Player Controllers";
+			path = "Player Controllers";
 			sourceTree = "<group>";
 		};
 		18994FC51B8FA54100AEA795 /* Models */ = {
@@ -314,49 +318,51 @@
 				18994FDE1B90DBAE00AEA795 /* PlayerManager.m */,
 				18994FF31B9DF09200AEA795 /* PlaylistManager.h */,
 				18994FF41B9DF09200AEA795 /* PlaylistManager.m */,
-				18994FF61B9DF21100AEA795 /* RLMTrack.h */,
-				18994FF71B9DF21100AEA795 /* RLMTrack.m */,
 				18994FF91B9DF48600AEA795 /* RLMPlaylist.h */,
 				18994FFA1B9DF48600AEA795 /* RLMPlaylist.m */,
+				18994FF61B9DF21100AEA795 /* RLMTrack.h */,
+				18994FF71B9DF21100AEA795 /* RLMTrack.m */,
 				18994FC21B8FA53900AEA795 /* SDTrack.h */,
 				18994FC31B8FA53900AEA795 /* SDTrack.m */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		18994FD61B90D45B00AEA795 /* Page Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				18994FD01B90D36500AEA795 /* SAPageRootViewController.h */,
-				18994FD11B90D36500AEA795 /* SAPageRootViewController.m */,
 				18994FD21B90D36500AEA795 /* SABaseContentViewController.h */,
 				18994FD31B90D36500AEA795 /* SABaseContentViewController.m */,
+				18994FD01B90D36500AEA795 /* SAPageRootViewController.h */,
+				18994FD11B90D36500AEA795 /* SAPageRootViewController.m */,
 			);
-			name = "Page Controllers";
+			path = "Page Controllers";
 			sourceTree = "<group>";
 		};
 		18994FE01B90F93300AEA795 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				1817FDE71BB6528500EBA100 /* no-album-art.png */,
-				18E2BB4B1BB5FBEF00366016 /* PlaylistsAsset@2x.png */,
-				186BA1981BB0E7ED00F82600 /* ReplaySongSelected@2x.png */,
-				186BA1991BB0E7ED00F82600 /* ShufflePlaySelected@2x.png */,
-				1899501B1BAA889200AEA795 /* ShufflePlay2@2x.png */,
-				189950171BAA861C00AEA795 /* ReplaySong@2x.png */,
-				1899500A1BA0984700AEA795 /* List@2x.png */,
-				18994FF11B9CAB3F00AEA795 /* Plus@2x.png */,
-				18994FED1B9CA8D000AEA795 /* CheckMarkOrange@2x.png */,
 				18994FE81B9B71D200AEA795 /* CheckMark@2x.png */,
-				18994FCC1B90C6F500AEA795 /* Skip@2x.png */,
+				18994FED1B9CA8D000AEA795 /* CheckMarkOrange@2x.png */,
+				1899500A1BA0984700AEA795 /* List@2x.png */,
+				1817FEA41BB7975F00EBA100 /* NoArtworkOrange@2x.png */,
 				18994FC61B90C6EC00AEA795 /* Pause@2x.png */,
 				18994FC71B90C6EC00AEA795 /* Play@2x.png */,
 				18994FC81B90C6EC00AEA795 /* PlayLast@2x.png */,
 				18994FA71B8F8F5D00AEA795 /* Playlists@2x.png */,
+				18E2BB4B1BB5FBEF00366016 /* PlaylistsAsset@2x.png */,
+				18994FF11B9CAB3F00AEA795 /* Plus@2x.png */,
+				189950171BAA861C00AEA795 /* ReplaySong@2x.png */,
+				186BA1981BB0E7ED00F82600 /* ReplaySongSelected@2x.png */,
 				18994FA81B8F8F5D00AEA795 /* Search@2x.png */,
+				1899501B1BAA889200AEA795 /* ShufflePlay2@2x.png */,
+				186BA1991BB0E7ED00F82600 /* ShufflePlaySelected@2x.png */,
+				18994FCC1B90C6F500AEA795 /* Skip@2x.png */,
 				18994FB11B8F90E600AEA795 /* StreamBlack@2x.png */,
+				1842C2BC1BE710580001033D /* breadpilot.jpg */,
+				1817FDE71BB6528500EBA100 /* no-album-art.png */,
 			);
-			name = Assets;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		5ACBFF33AA453EAC325A276E /* Frameworks */ = {
@@ -464,6 +470,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1817FEA51BB7975F00EBA100 /* NoArtworkOrange@2x.png in Resources */,
 				186BA19B1BB0E7ED00F82600 /* ShufflePlaySelected@2x.png in Resources */,
 				18994F751B8F8A4400AEA795 /* Tab.storyboard in Resources */,
 				18994FC91B90C6EC00AEA795 /* Pause@2x.png in Resources */,
@@ -484,6 +491,7 @@
 				18994FAA1B8F8F5D00AEA795 /* Search@2x.png in Resources */,
 				18994FAC1B8F8FC300AEA795 /* Player.storyboard in Resources */,
 				18994F9B1B8F8D6300AEA795 /* Playlist.storyboard in Resources */,
+				1842C2BD1BE710580001033D /* breadpilot.jpg in Resources */,
 				18994FF21B9CAB3F00AEA795 /* Plus@2x.png in Resources */,
 				18994FCD1B90C6F500AEA795 /* Skip@2x.png in Resources */,
 				1817FDE81BB6528500EBA100 /* no-album-art.png in Resources */,
@@ -590,6 +598,7 @@
 				18994F741B8F8A4400AEA795 /* Base */,
 			);
 			name = Tab.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		18994F781B8F8A4400AEA795 /* LaunchScreen.xib */ = {
@@ -598,6 +607,7 @@
 				18994F791B8F8A4400AEA795 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -689,7 +699,7 @@
 			baseConfigurationReference = 1AD9D907A69FB546F7B1BAD4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Soundza/Info.plist;
+				INFOPLIST_FILE = "Soundza/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SD.$(PRODUCT_NAME:rfc1034identifier)";
@@ -703,7 +713,7 @@
 			baseConfigurationReference = 1F6FDF458636676E0A805C00 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Soundza/Info.plist;
+				INFOPLIST_FILE = "Soundza/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SD.$(PRODUCT_NAME:rfc1034identifier)";
@@ -724,7 +734,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SoundzaTests/Info.plist;
+				INFOPLIST_FILE = "SoundzaTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SD.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -740,7 +750,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SoundzaTests/Info.plist;
+				INFOPLIST_FILE = "SoundzaTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SD.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
