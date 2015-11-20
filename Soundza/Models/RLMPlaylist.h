@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Andrew Friedman. All rights reserved.
 //
 
-#import "RLMObject.h"
 #import <Realm/Realm.h>
 #import "RLMTrack.h"
 

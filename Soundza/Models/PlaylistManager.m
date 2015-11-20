@@ -44,7 +44,7 @@
     RLMTrack *savedTrack = [[RLMTrack alloc]init];
     savedTrack.titleString = track.titleString;
     savedTrack.usernameString = track.usernameString;
-    savedTrack.artworkURLString = track.artworkURLString;
+    savedTrack.artworkURLString = track.artworkURLString ? track.artworkURLString : [NSString stringWithFormat:@""];
     savedTrack.duration = [track.duration integerValue];
     savedTrack.streamURLString = track.streamURLString;
     savedTrack.createdAt = [NSDate date];

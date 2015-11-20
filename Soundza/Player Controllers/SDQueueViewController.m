@@ -28,6 +28,7 @@ static NSString *const KTableViewReuseIdentitifer = @"Queue";
     [self setupDisplay];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(songQueuedNotification:) name:@"songQueued" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(clearQueueNotification:) name:@"clearQueue" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(playerUpdatedNotification:) name:@"updatedPlayer" object:nil];
     
 }
@@ -57,6 +58,10 @@ static NSString *const KTableViewReuseIdentitifer = @"Queue";
 
 #pragma mark - NSNotification Center
 
+-(void)clearQueueNotification:(NSNotification *)notification
+{
+    [self setupDisplay];
+}
 
 -(void)playerUpdatedNotification:(NSNotification *)notification
 {

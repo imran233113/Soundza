@@ -53,6 +53,7 @@
 -(void)playNext;
 -(void)playNextInQueue;
 -(void)enqueueTrack:(SDTrack *)track;
+-(void)clearQueue;
 
 -(void)playPlaylistTracks:(NSMutableArray *)tracks beginingAtIndex:(NSInteger)index;
 

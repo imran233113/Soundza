@@ -10,12 +10,24 @@
 #import <AVFoundation/AVFoundation.h>
 #import "PlaylistManager.h"
 #import "PlayerManager.h"
+#import "iRate.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+
++ (void)initialize
+{
+    
+    [iRate sharedInstance].applicationBundleID = @"SD.Soundza";
+    [iRate sharedInstance].appStoreID = 1043813927;
+    //configure iRate
+    //set events count (default is 10)
+    //disable minimum day limit and reminder periods
+    [iRate sharedInstance].daysUntilPrompt = 5;
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -54,6 +66,7 @@
     
     RLMPlaylist *firstPlaylist = [[RLMPlaylist objectsWhere:@"isCurrent = YES"]firstObject];
     [PlaylistManager sharedManager].playlist = (RLMPlaylist *)firstPlaylist;
+    
     
     return YES;
 }

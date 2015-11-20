@@ -9,21 +9,26 @@
 #import "SAPageRootViewController.h"
 #import "SDQueueViewController.h"
 #import "SABaseContentViewController.h"
+#import "PlayerManager.h"
 
 @interface SAPageRootViewController ()
 @property (strong, nonatomic) NSArray *contentPageRestorationIDs; // NSString
 @property (nonatomic, strong) NSNumber *index;
 @property (strong, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+- (IBAction)clearButtonPressed:(UIBarButtonItem *)sender;
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *clearButton;
 - (IBAction)segmentSwitch:(UISegmentedControl *)sender;
 @end
 
 @implementation SAPageRootViewController
 
-- (IBAction)dissmissArrowPressed:(UIButton *)sender
+- (IBAction)clearButtonPressed:(UIBarButtonItem *)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [[PlayerManager sharedManager]clearQueue];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"clearQueue" object:nil];
+    [self displayClearButton];
 }
 
 - (IBAction)segmentSwitch:(UISegmentedControl *)sender
@@ -33,10 +38,13 @@
     
     if (selectedSegment == 0) {
         [self goToPreviousContentViewController:sender];
+        self.clearButton.title = @"";
+        self.clearButton.enabled = NO;
     }
     else{
         [self goToNextContentViewController:sender];
-    }
+        [self displayClearButton];
+        }
 }
 
 
@@ -44,6 +52,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.clearButton.title = @"";
+    self.clearButton.enabled = NO;
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Player" bundle:nil];
     UIPageViewController *pageViewController = [storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
@@ -153,5 +164,16 @@
                                      }];
 }
 
+-(void)displayClearButton;
+{
+    if ([PlayerManager sharedManager].queue.count) {
+        self.clearButton.title = @"Clear";
+        self.clearButton.enabled = YES;
+    }
+    else{
+        self.clearButton.title = @"";
+        self.clearButton.enabled = NO;
+    }
+}
 
 @end

@@ -30,8 +30,15 @@
     self.titleLabel.text = track.titleString;
     self.usernameLabel.text = track.usernameString;
     
-    NSURL *albumArtURL = [NSURL URLWithString:track.artworkURLString];
-    [self.artworkImageView sd_setImageWithURL:albumArtURL];
+
+    if (track.artworkURLString.length)
+    {
+        NSURL *albumArtURL = [NSURL URLWithString:track.artworkURLString];
+        [self.artworkImageView sd_setImageWithURL:albumArtURL];
+    }
+    else{
+        [self.artworkImageView setImage:[UIImage imageNamed:@"no-album-art"]];
+    }
     
     
     //If this is the current track being played, make the labels text orange

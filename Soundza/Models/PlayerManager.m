@@ -302,6 +302,11 @@
     }
 }
 
+-(void)clearQueue
+{
+    [self.queue removeAllObjects];
+}
+
 -(void)enqueueTrack:(SDTrack *)track;
 {
     if (!self.queue) {

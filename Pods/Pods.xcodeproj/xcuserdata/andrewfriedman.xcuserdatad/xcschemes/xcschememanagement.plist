@@ -4,37 +4,32 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-AFNetworking.xcscheme</key>
+		<key>AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-CocoaSoundCloudAPI.xcscheme</key>
+		<key>Appirater-Appirater.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-MarqueeLabel.xcscheme</key>
+		<key>Appirater.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-NXOAuth2Client.xcscheme</key>
+		<key>CocoaSoundCloudAPI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Realm.xcscheme</key>
+		<key>MarqueeLabel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-SDWebImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-SWTableViewCell.xcscheme</key>
+		<key>NXOAuth2Client.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -44,45 +39,70 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Realm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SWTableViewCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1F7928426A8DD95020DCD313</key>
+		<key>1A3155A1CE86FD415A2FA193545BAB2E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>40D93202294428F631DBA1CB</key>
+		<key>25B40C3AC107900D6579C230D4F8B3C2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>554C91DD0831A48E4650686B</key>
+		<key>3D923CCD4DDAD4F6DDACCE3185F4C681</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>86D80584298A4AE08C36EF72</key>
+		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E261F5149D0F3831A7886B0D</key>
+		<key>4B0FEC608751BDDCCED686657A9D469C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EA67572C925D35CDA253FBF7</key>
+		<key>642BE29F8F0C5A71ACF26893076A61B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F010C15D0B326F3C02398B32</key>
+		<key>8071BA76D3B1308C0B1ACED15CA419FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FECFB7CE07DD4BA516A1AC5A</key>
+		<key>A132C8D211C6B8B9D671B650DC3ACD64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CBA9C9F6A582DF509DC7D779E374E359</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F999BD3434F040D75C4583C165D59C1C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

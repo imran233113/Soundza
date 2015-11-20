@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Appirater (2.0.5)
   - CocoaSoundCloudAPI (1.0.1):
     - NXOAuth2Client (= 1.2.1)
   - MarqueeLabel (2.2.5)
@@ -34,6 +35,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - Appirater
   - CocoaSoundCloudAPI (= 1.0.1)
   - MarqueeLabel
   - Realm
@@ -42,6 +44,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
+  Appirater: e7c0a47fb67ee5041ce8479e6ba960927fb40264
   CocoaSoundCloudAPI: e8e1f2e463fa9bb9d68b2dcf361572787c7a6c3f
   MarqueeLabel: 65ca60ee9ba554be34f35339004c6c9fe6366a31
   NXOAuth2Client: 4705ee7d3532c106e2758e2f10f4e9964b5aec68
@@ -49,4 +52,4 @@ SPEC CHECKSUMS:
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
 
-COCOAPODS: 0.36.4
+COCOAPODS: 0.39.0
